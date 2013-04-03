@@ -1,0 +1,162 @@
+Return-Path: <brad@structuredcommons.com>
+Delivered-To: rsingh@opengeospatial.org
+Received: from localhost (localhost [127.0.0.1])
+	by mail.opengeospatial.org (Postfix) with ESMTP id 112C25A298
+	for <rsingh@opengeospatial.org>; Tue, 21 Feb 2012 13:58:55 -0500 (EST)
+X-Virus-Scanned: Debian amavisd-new at mail.ogcinc.net
+X-Spam-Flag: NO
+X-Spam-Score: -3.599
+X-Spam-Level: 
+X-Spam-Status: No, score=-3.599 tagged_above=-999 required=5
+	tests=[BAYES_00=-2.599, HTML_MESSAGE=0.001, RCVD_IN_DNSWL_LOW=-1,
+	SPF_PASS=-0.001]
+Received: from mail.opengeospatial.org ([127.0.0.1])
+	by localhost (mail.opengeospatial.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id Dk4C8pNgohm6 for <rsingh@opengeospatial.org>;
+	Tue, 21 Feb 2012 13:58:50 -0500 (EST)
+Received: from mail-gy0-f178.google.com (mail-gy0-f178.google.com [209.85.160.178])
+	by mail.opengeospatial.org (Postfix) with ESMTPS id 93C9E5A263
+	for <rsingh@opengeospatial.org>; Tue, 21 Feb 2012 13:58:50 -0500 (EST)
+Received: by ghbf14 with SMTP id f14so3564943ghb.23
+        for <rsingh@opengeospatial.org>; Tue, 21 Feb 2012 10:58:50 -0800 (PST)
+Received-SPF: pass (google.com: domain of brad@structuredcommons.com designates 10.50.154.200 as permitted sender) client-ip=10.50.154.200;
+Authentication-Results: mr.google.com; spf=pass (google.com: domain of brad@structuredcommons.com designates 10.50.154.200 as permitted sender) smtp.mail=brad@structuredcommons.com
+Received: from mr.google.com ([10.50.154.200])
+        by 10.50.154.200 with SMTP id vq8mr21881916igb.14.1329850730181 (num_hops = 1);
+        Tue, 21 Feb 2012 10:58:50 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.50.154.200 with SMTP id vq8mr17653460igb.14.1329850729943;
+ Tue, 21 Feb 2012 10:58:49 -0800 (PST)
+Reply-To: bradley@factual.com
+Received: by 10.50.160.226 with HTTP; Tue, 21 Feb 2012 10:58:49 -0800 (PST)
+Date: Tue, 21 Feb 2012 10:58:49 -0800
+Message-ID: <CAD3Kmqn8fcOo6RkSVBmUwyiX0pK4LJnTcBmXzyNs4X2cqddtgA@mail.gmail.com>
+Subject: Factual API Key
+From: Bradley Geilfuss <bradley@factual.com>
+To: rsingh@opengeospatial.org
+Content-Type: multipart/alternative; boundary=14dae93408215cd2bd04b97e001b
+X-Gm-Message-State: ALoCoQkAjWwhn1R7JWHnOEnCg350TBxnZ6NKyurwkfSz5tEf2f9Z4EaszqDhjly2sPI7aTqejr+F
+
+--14dae93408215cd2bd04b97e001b
+Content-Type: text/plain; charset=ISO-8859-1
+
+Hi Raj-
+
+I generated a Factual V3 API account for you.  Your Factual OAuth
+credentials are:
+
+OAuth Key: s0pncs35mS6iHWIBQIxGFF6VbiezpKgPsNYD4uuF
+
+OAuth Secret: 0B9pKvYgSC7P7aKPHBJGxFQQdmFnInPK9rfgoekf
+
+
+A couple notes on the V3 API:
+
+   - All *API documentation* can be found here:
+      - http://developer.factual.com/
+   - We now have language-specific drivers and tutorials for *Java*, *Ruby*,
+   *PHP* and *Clojure*!  We'll be adding *iPhone* to that list very, very
+   shortly.
+   - Currently only *Global place* and *US restaurant* datasets are
+   accessible through V3:
+      -
+      http://developer.factual.com/display/docs/Places+API+-+Global+Database
+      - http://developer.factual.com/display/docs/Places+API+-+Restaurants
+   - If you are using the Crosswalk API, a list of *supported Crosswalk
+   services* can be found here:
+      -
+      http://developer.factual.com/display/docs/Places+API+-+Supported+Crosswalk+Services
+   - We've moved to *2-legged OAuth (1.0) for authentication*.
+      - Details: http://developer.factual.com/display/docs/Core+API+-+Oauth
+      - Do not, under any circumstance, share your "secret" publicly.  That
+      means, in particular, don't use it for client side code where the secret
+      itself gets served to a web browsing client.
+      - There is no user/key management system yet.  Contact me directly if
+      your key is compromised and you require a new one.
+   - We've configured an *Apigee console* here for testing hand-written
+   queries using OAuth:
+      - https://apigee.com/factual/embed/console/v3
+      - If you need help using it: Apigee
+tutorial<http://developer.factual.com/display/docs/Core+API+-+Using+Apigee+API+Console>
+      .
+   - There is *no support yet for writing data in the beta yet*. For that,
+   you are best served by giving us CSVs at this time.  Write support is
+   expected shortly.
+
+Bradley
+
+-- 
+Bradley Geilfuss - Sr. Product Manager - bradley@factual.com
+--
+Factual, Inc.
+
+--14dae93408215cd2bd04b97e001b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hi Raj-
+<p class=3D"p2">I generated a Factual V3 API account for you.=A0 Your Factu=
+al OAuth credentials are:</p>
+<p class=3D"p3"></p><p class=3D"p3">OAuth Key: s0pncs35mS6iHWIBQIxGFF6Vbiez=
+pKgPsNYD4uuF</p><p class=3D"p3">OAuth Secret: 0B9pKvYgSC7P7aKPHBJGxFQQdmFnI=
+nPK9rfgoekf</p><p></p>
+<p class=3D"p3"><br></p>
+<p class=3D"p4">A couple notes on the V3 API:</p>
+<ul class=3D"ul1">
+<li class=3D"li4">All <b>API documentation</b> can be found here:</li>
+<ul class=3D"ul2">
+<li class=3D"li5"><a href=3D"http://developer.factual.com/">http://develope=
+r.factual.com/</a></li>
+</ul>
+<li class=3D"li4">We now have language-specific drivers and tutorials for <=
+b>Java</b>, <b>Ruby</b>, <b>PHP</b> and <b>Clojure</b>!=A0 We&#39;ll be add=
+ing <b>iPhone</b> to that list very, very shortly.</li>
+<li class=3D"li4">Currently only <b>Global place</b> and <b>US restaurant</=
+b> datasets are accessible through V3:</li>
+<ul class=3D"ul2">
+<li class=3D"li4"><a href=3D"http://developer.factual.com/display/docs/Plac=
+es+API+-+Global+Database">http://developer.factual.com/display/docs/Places+=
+API+-+Global+Database</a></li>
+<li class=3D"li4"><a href=3D"http://developer.factual.com/display/docs/Plac=
+es+API+-+Restaurants">http://developer.factual.com/display/docs/Places+API+=
+-+Restaurants</a></li>
+</ul>
+<li class=3D"li4">If you are using the Crosswalk API, a list of <b>supporte=
+d Crosswalk services</b> can be found here:</li>
+<ul class=3D"ul2">
+<li class=3D"li5"><a href=3D"http://developer.factual.com/display/docs/Plac=
+es+API+-+Supported+Crosswalk+Services">http://developer.factual.com/display=
+/docs/Places+API+-+Supported+Crosswalk+Services</a></li>
+</ul>
+<li class=3D"li4">We&#39;ve moved to=A0<b>2-legged OAuth (1.0)=A0for authen=
+tication</b>.</li>
+<ul class=3D"ul2">
+<li class=3D"li5"><span class=3D"s1">Details:=A0<a href=3D"http://developer=
+.factual.com/display/docs/Core+API+-+Oauth">http://developer.factual.com/di=
+splay/docs/Core+API+-+Oauth</a></span></li>
+<li class=3D"li4">Do not, under any circumstance, share your &quot;secret&q=
+uot; publicly. =A0That means, in particular, don&#39;t use it for client si=
+de code where the secret itself gets served to a web browsing client.</li>
+
+<li class=3D"li4">There is=A0no user/key=A0management system=A0yet. =A0Cont=
+act me directly if your=A0key=A0is compromised and you require a new one.</=
+li>
+</ul>
+<li class=3D"li4">We&#39;ve configured an=A0<b>Apigee=A0console</b>=A0here =
+for testing hand-written queries using OAuth:</li>
+<ul class=3D"ul2">
+<li class=3D"li5"><a href=3D"https://apigee.com/factual/embed/console/v3">h=
+ttps://apigee.com/factual/embed/console/v3</a></li>
+<li class=3D"li4">If you need help using it: <a href=3D"http://developer.fa=
+ctual.com/display/docs/Core+API+-+Using+Apigee+API+Console">Apigee tutorial=
+</a>.</li>
+</ul>
+<li class=3D"li4">There is=A0<b>no support yet for writing data=A0in the be=
+ta yet</b>. For that, you are best served by giving us CSVs at this time.=
+=A0 Write support is expected shortly.</li>
+</ul>
+<p class=3D"p6">Bradley</p><div><br></div>-- <br>Bradley Geilfuss - Sr. Pro=
+duct Manager - <a href=3D"mailto:bradley@factual.com" target=3D"_blank">bra=
+dley@factual.com</a><br>--<br>Factual, Inc.<br><br>
+
+--14dae93408215cd2bd04b97e001b--

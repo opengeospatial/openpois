@@ -1,0 +1,83 @@
+<pois type="array">
+  <poi>
+    <id>1076306</id>
+    <name>Ancient &amp; Honorable Artillery Co of Massachusetts</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>42.3599735527865</digital-latitude>
+    <digital-longitude>-71.0560098057562</digital-longitude>
+    <latitude>42.3599735527865</latitude>
+    <longitude>-71.0560098057562</longitude>
+  </poi>
+  <poi>
+    <id>377193</id>
+    <name>Bell in Hand Tavern</name>
+    <poi-type>Drink</poi-type>
+    <digital-latitude>42.3614465092103</digital-latitude>
+    <digital-longitude>-71.0570349234958</digital-longitude>
+    <latitude>42.3614465092103</latitude>
+    <longitude>-71.0570349234958</longitude>
+  </poi>
+  <poi>
+    <id>377709</id>
+    <name>Boston Pewter Company</name>
+    <poi-type>Shop</poi-type>
+    <digital-latitude>42.3600473424668</digital-latitude>
+    <digital-longitude>-71.0560660826585</digital-longitude>
+    <latitude>42.3600473424668</latitude>
+    <longitude>-71.0560660826585</longitude>
+  </poi>
+  <poi>
+    <id>377145</id>
+    <name>Faneuil Hall</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>42.3599689506968</digital-latitude>
+    <digital-longitude>-71.0561233823074</digital-longitude>
+    <latitude>42.3599689506968</latitude>
+    <longitude>-71.0561233823074</longitude>
+  </poi>
+  <poi>
+    <id>377245</id>
+    <name>Green Dragon</name>
+    <poi-type>Night</poi-type>
+    <digital-latitude>42.3613610563975</digital-latitude>
+    <digital-longitude>-71.0569350324679</digital-longitude>
+    <latitude>42.3613610563975</latitude>
+    <longitude>-71.0569350324679</longitude>
+  </poi>
+  <poi>
+    <id>1012498</id>
+    <name>Millennium Bostonian Hotel</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>42.3610411874584</digital-latitude>
+    <digital-longitude>-71.0558903217316</digital-longitude>
+    <latitude>42.3610411874584</latitude>
+    <longitude>-71.0558903217316</longitude>
+  </poi>
+  <poi>
+    <id>377949</id>
+    <name>New England Holocaust Memorial</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>42.3612318018471</digital-latitude>
+    <digital-longitude>-71.0572477408693</digital-longitude>
+    <latitude>42.3612318018471</latitude>
+    <longitude>-71.0572477408693</longitude>
+  </poi>
+  <poi>
+    <id>1126994</id>
+    <name>Out of Left Field</name>
+    <poi-type>Shop</poi-type>
+    <digital-latitude>42.3599518573926</digital-latitude>
+    <digital-longitude>-71.0559478298584</digital-longitude>
+    <latitude>42.3599518573926</latitude>
+    <longitude>-71.0559478298584</longitude>
+  </poi>
+  <poi>
+    <id>1199622</id>
+    <name>Union Oyster House</name>
+    <poi-type>Eat</poi-type>
+    <digital-latitude>42.3612430885692</digital-latitude>
+    <digital-longitude>-71.0569539458388</digital-longitude>
+    <latitude>42.3612430885692</latitude>
+    <longitude>-71.0569539458388</longitude>
+  </poi>
+</pois>

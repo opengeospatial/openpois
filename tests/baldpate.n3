@@ -1,0 +1,85 @@
+
+@base <http://openpoi.ogcnetwork.net/pois> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+
+</8e240b51-5002-480d-afbe-30792752f607> openpoi:id </8e240b51-5002-480d-afbe-30792752f607> ; 
+  rdf:about </8e240b51-5002-480d-afbe-30792752f607> . 
+</8e240b51-5002-480d-afbe-30792752f607> openpoi:label </8e240b51-5002-480d-afbe-30792752f607/label#76c6ff85-ce10-42a9-b0aa-7a7a46262bb5> .
+ </8e240b51-5002-480d-afbe-30792752f607/label#76c6ff85-ce10-42a9-b0aa-7a7a46262bb5> [ 
+ dcterms:title "Baldpate Hospital" ; 
+ rdf:value "Baldpate Hospital" ; 
+ dcterms:type "primary" ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#b7d8b5a6-da24-4dcd-a197-94def1ed69d1> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#b7d8b5a6-da24-4dcd-a197-94def1ed69d1> [ 
+ rdf:value "82" ; 
+ dcterms:type "ele" ; 
+ dcterms:conformsTo <http://wiki.openstreetmap.org/wiki/Map_Features#ele> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#a37bec84-a45c-4557-929f-0b4bf4f7edd3> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#a37bec84-a45c-4557-929f-0b4bf4f7edd3> [ 
+ rdf:value "25" ; 
+ dcterms:type "gnis:state_id" ; 
+ dcterms:conformsTo <http://wiki.openstreetmap.org/wiki/Map_Features#gnis:state_id> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#ea42b7e7-8a64-464a-a0b8-30a146544322> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#ea42b7e7-8a64-464a-a0b8-30a146544322> [ 
+ rdf:value "1979060" ; 
+ dcterms:type "gnis:feature_id" ; 
+ dcterms:conformsTo <http://wiki.openstreetmap.org/wiki/Map_Features#gnis:feature_id> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#c4ad1fcd-e628-43ce-ad47-30ed99e1add9> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#c4ad1fcd-e628-43ce-ad47-30ed99e1add9> [ 
+ rdf:value "hospital" ; 
+ dcterms:type "amenity" ; 
+ dcterms:conformsTo <http://wiki.openstreetmap.org/wiki/Map_Features#amenity> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#3d2b9a69-6cdd-421c-801d-1c2ee8c49dd2> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#3d2b9a69-6cdd-421c-801d-1c2ee8c49dd2> [ 
+ rdf:value "009" ; 
+ dcterms:type "gnis:county_id" ; 
+ dcterms:conformsTo <http://wiki.openstreetmap.org/wiki/Map_Features#gnis:county_id> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#df99a46d-fc68-48b9-bd10-2c314a29862e> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#df99a46d-fc68-48b9-bd10-2c314a29862e> [ 
+ rdf:value "S" ; 
+ dcterms:type "featureclass" ; 
+ dcterms:conformsTo <http://www.geonames.org/export/codes.html> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#85895d56-26b7-4108-adef-e4611ddbde16> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#85895d56-26b7-4108-adef-e4611ddbde16> [ 
+ rdf:value "HSP" ; 
+ dcterms:type "featurecode" ; 
+ dcterms:conformsTo <http://www.geonames.org/export/codes.html> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:subject </8e240b51-5002-480d-afbe-30792752f607/category#762c2f0e-a35f-4a61-8719-7cf3e6a1fe4c> .
+ </8e240b51-5002-480d-afbe-30792752f607/category#762c2f0e-a35f-4a61-8719-7cf3e6a1fe4c> [ 
+ rdf:value "US" ; 
+ dcterms:type "cc" ; 
+ dcterms:conformsTo <http://www.geonames.org/export/dump/countryInfo.txt> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> openpoi:link </8e240b51-5002-480d-afbe-30792752f607/link#7622e49e-89a7-40ff-a987-6fdf0b278bc8> .
+ </8e240b51-5002-480d-afbe-30792752f607/link#7622e49e-89a7-40ff-a987-6fdf0b278bc8> [ 
+ openpoi:href <http://www.openstreetmap.org/api/0.6/node/358281744> ; 
+ dcterms:type "related" ; 
+ dcterms:conformsTo <http://www.iana.org/assignments/link-relations/link-relations.xml> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> openpoi:link </8e240b51-5002-480d-afbe-30792752f607/link#27e92504-5f5a-4435-9d12-a75625b81196> .
+ </8e240b51-5002-480d-afbe-30792752f607/link#27e92504-5f5a-4435-9d12-a75625b81196> [ 
+ rdfs:about 4929644 ; 
+ openpoi:href <http://api.geonames.org/get?username=demo&geonameid=4929644> ; 
+ dcterms:type "related" ; 
+ dcterms:conformsTo <http://www.iana.org/assignments/link-relations/link-relations.xml> ; 
+] . 
+</8e240b51-5002-480d-afbe-30792752f607> dcterms:spatial </8e240b51-5002-480d-afbe-30792752f607/location#27e92504-5f5a-4435-9d12-a75625b81196> .
+ </8e240b51-5002-480d-afbe-30792752f607/location#4a9a5bdf-5a3f-441c-8884-9f98c962b481> [ 
+
+   </8e240b51-5002-480d-afbe-30792752f607/point#0bf84174-0f47-4191-85e5-8732f29979a4> [ 
+     dcterms:type "centroid" ;   
+     openpoi:poslist 42.70484 -71.01075 ; 
+  ] . 
+] . 

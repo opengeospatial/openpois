@@ -1,0 +1,82 @@
+{
+  "version": 3,
+  "status": "ok",
+  "response": {
+    "data": [
+      {
+        "url": "http://www.facebook.com/pages/The-Stand-Century-City/141312212562826",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "141312212562826",
+        "namespace": "facebook"
+      },
+      {
+        "url": "http://getfoodgenius.com/api/{api_version}/menus/0ec0da2a-16c6-4607-889a-b0d211799bf2/",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "0ec0da2a-16c6-4607-889a-b0d211799bf2",
+        "namespace": "foodgenius"
+      },
+      {
+        "url": "https://www.foursquare.com/venue/4ae4df6df964a520019f21e3",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "4ae4df6df964a520019f21e3",
+        "namespace": "foursquare"
+      },
+      {
+        "url": "http://www.menuism.com/restaurants/the-stand-los-angeles-269602",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "",
+        "namespace": "menuism"
+      },
+      {
+        "url": "http://www.menumob.com/restaurant-info.php?restaurant_id=128985",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "128985",
+        "namespace": "menumob"
+      },
+      {
+        "url": "http://www.openmenu.com/restaurant/21324ec4-15bb-11e0-b40e-0018512e6b26",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "21324ec4-15bb-11e0-b40e-0018512e6b26",
+        "namespace": "openmenu"
+      },
+      {
+        "url": "http://centurycity.patch.com/listings/the-stand-3",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "",
+        "namespace": "patch"
+      },
+      {
+        "url": "https://simplegeo.com/SG_6Cnx1RsOAHRxqNiRvEFY57/",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "SG_6Cnx1RsOAHRxqNiRvEFY57",
+        "namespace": "simplegeo"
+      },
+      {
+        "url": "",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "stand-the",
+        "namespace": "singleplatform"
+      },
+      {
+        "url": "http://api.twitter.com/1/geo/id/1ac38bffd9425373.json",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "1ac38bffd9425373",
+        "namespace": "twitter_place"
+      },
+      {
+        "url": "http://www.yelp.com/biz/the-stand-los-angeles-6",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "tqeLoSVy_qRS5jaKTXCxyQ",
+        "namespace": "yelp"
+      },
+      {
+        "url": "http://www.zagat.com/r/stand-the-century-city/",
+        "factual_id": "57ddbca5-a669-4fcf-968f-a1c8210a479a",
+        "namespace_id": "",
+        "namespace": "zagat"
+      }
+    ],
+    "included_rows": 12,
+    "total_row_count": 12
+  }
+}

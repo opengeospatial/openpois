@@ -1,0 +1,69 @@
+
+{
+    "meta":
+    {
+        "code":200
+    },
+    "response":
+    {
+        "venues":
+        [
+            {
+                "id":"42869100f964a5201e231fe3",
+                "name":"Legal Sea Foods",
+                "contact":
+                {
+                    "phone":"6178643400",
+                    "formattedPhone":"(617) 864-3400",
+                    "twitter":"legalseafoods"
+                },
+                "location":
+                {
+                    "address":"5 Cambridge Ctr",
+                    "crossStreet":"at Kendall Square",
+                    "lat":42.362562,
+                    "lng":-71.08785314494146,
+                    "distance":24,
+                    "postalCode":"02142",
+                    "city":"Cambridge",
+                    "state":"MA",
+                    "country":"United States"
+                },
+                "categories":
+                [
+                    {
+                        "id":"4bf58dd8d48988d1ce941735",
+                        "name":"Seafood Restaurant",
+                        "pluralName":"Seafood Restaurants",
+                        "shortName":"Seafood",
+                        "icon":
+                        {
+                            "prefix":"https:\/\/foursquare.com\/img\/categories\/food\/seafood_",
+                            "sizes":
+                            [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name":".png"
+                        },
+                        "primary":true
+                    }
+                ],
+                "verified":false,
+                "stats":
+                {
+                    "checkinsCount":2260,
+                    "usersCount":1476,
+                    "tipCount":29
+                },
+                "hereNow":
+                {
+                    "count":0
+                }
+            }
+        ]
+    }
+}

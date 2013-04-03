@@ -1,0 +1,43 @@
+How to do updates
+=================
+On initial import, give all OSM POIs <link>s where the ID is "http://www.openstreetmap.org/api/0.6/node/" plus the OSM ID, the base is "http://www.openstreetmap.org/api/0.6/node" and the term is "via" and the href is the same as the ID. Also give all properties of the POI that come from OSM data an ID of "http://www.openstreetmap.org/api/0.6/node/" plus the OSM ID.
+
+To delete:
+1. for each POI in the changeset info that's marked delete, 
+2. build a POI
+3. find the POI that has a <link> with an ID of "http://www.openstreetmap.org/api/0.6/node/" plus the POI ID
+4. find out if that POI only has OSM data
+5. if so, delete the whole POI
+6. if not, then delete all the POI properties that have that <link> ID as their ID value.
+
+To modify:
+1. for each POI in the changeset info that's marked modify, 
+2. build a POI
+3. find the POI that has a <link> with an ID of "http://www.openstreetmap.org/api/0.6/node/" plus the POI ID
+4. delete all the POI properties that have that <link> ID as their ID value
+5. add new properties
+
+To create:
+1. for each POI in the changeset info that's marked create, 
+2. build a POI
+3. search for a POI that already has a <link> with an ID of "http://www.openstreetmap.org/api/0.6/node/" plus the POI ID
+3a. (future) do heuristic search to find a POI candidate that seems to be the same place that the OSM info is trying to reference
+2. if that exists, return an "already exists" error
+3. if not, then just create a new POI
+
+OSM categories from http://wiki.openstreetmap.org/wiki/Map_Features
+leisure
+amenity
+office
+shop
+craft
+emergency
+tourism
+historic
+
+
+massachusetts.osm notes:
+lines in file: 39,175,944
+21565928:  <node id="1542587356" version="1" timestamp="2011-12-12T15:02:25Z" uid="464669" user="pselkirk" changeset="10099784" lat="42.6099724" lon="-71.1185356">
+
+

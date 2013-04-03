@@ -1,0 +1,1 @@
+curl -u jXEee9MsPwAfgAQYMkLO2A:EAPCgR3QBDMdaeGNVwkraBPpu6E9je55JaIjNhBEWE http://api.lonelyplanet.com/api/bounding_boxes/42.362,42.360,-71.054,-71.058/pois

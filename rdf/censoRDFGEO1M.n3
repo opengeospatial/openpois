@@ -1,0 +1,100 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#NORDF> 1 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/hogar#HOGAR> <http://census.lab216.com/censo/2001/hogares/000001> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#MNAC> 12 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#ANAC> 1967 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#EDAD> 33 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#SEXO> <http://census.lab216.com/censo/2001/persona#varon> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#NACI> <http://census.lab216.com/censo/2001/geo/108> .
+<http://census.lab216.com/censo/2001/geo/108> rdfs:label "ESPANA" .
+<http://census.lab216.com/censo/2001/geo/108> rdf:value 108 .
+<http://census.lab216.com/censo/2001/geo/108> owl:sameAs <http://www.geonames.org/2510769> .
+<http://census.lab216.com/censo/2001/geo/41> rdfs:label "Sevilla" .
+<http://census.lab216.com/censo/2001/geo/41> rdf:value 41 .
+<http://census.lab216.com/censo/2001/geo/41> owl:sameAs <http://www.geonames.org/2510911> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CPRON> <http://census.lab216.com/censo/2001/geo/41> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CMUNN> <http://census.lab216.com/censo/2001/geo/41992> .
+<http://census.lab216.com/censo/2001/geo/41992> rdfs:label "Municipio de 2001 a 5000 habitantes" .
+<http://census.lab216.com/censo/2001/geo/41992> rdf:value 992 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#ECIVIL> "Casado" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#PARENPP> "Persona de referencia" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#ANYOE> 1967 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#ANYOC> 1967 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#ANYOM> 1968 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CLPRO> <http://census.lab216.com/censo/2001/geo/41> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CLMUNP> <http://census.lab216.com/censo/2001/geo/41992> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#RES10> "En este municipio(o no hab&iacute;a nacido a&uacute;n)" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CPROV10> <http://census.lab216.com/censo/2001/geo/41> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CMUNP10> <http://census.lab216.com/censo/2001/geo/41994> .
+<http://census.lab216.com/censo/2001/geo/41994> rdfs:label "Municipio de 10001 a 20000 habitantes" .
+<http://census.lab216.com/censo/2001/geo/41994> rdf:value 994 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#SITU1> "Ocupados" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#SITU> "Ocupados" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#LUGTE> "Mismo municipio al de residencia" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CLPROV> <http://census.lab216.com/censo/2001/geo/41> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CLMUNI> <http://census.lab216.com/censo/2001/geo/41994> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#NVIAJE> "Uno" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#MDESP1> "Coche particular o furgoneta, conduciendo" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#TDESP> "Entre 10 y 20 minutos" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#COCUP> "Alba&ntilde;iles y mamposteros" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#SITP> "Trabajador por cuenta ajena con car&aacute;cter eventual, temporal.." .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#COACTI> "Construcci&oacute;n general de inmuebles y obras de ingenier&iacute;a civil" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CSE> "Operarios cualificados y especializados de establecimientos no agrarios" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#TTRAB> "35" .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#VIVIENDA> <http://census.lab216.com/censo/2001/viviendas/000001> .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#CVIVIF> "Convencionales" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#ANYORES> 1990 .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#TENEN> "Otra forma" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#RUIDEX> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#CONTA> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#LIMP> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#COM> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#VERDE> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#DELIN> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#SERVI> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#REF> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#CALE> "Sin instalaci&oacute;n pero con aparatos que permiten calentar alguna habitaci&oacute;n" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#COMBU> "Carb&oacute;n o derivados" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#ALTURA> 1 .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#NHAB> 5 .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#SUT> 90 .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#SVIV> "No" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#VEHIC> "1 solo veh&iacute;culo" .
+<http://census.lab216.com/censo/2001/viviendas/000001> <http://census.lab216.com/censo/2001/vivienda#EDIFICIO> <http://census.lab216.com/censo/2001/edificios/000001> .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#PLANTAS> 1 .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#PLANTAB> 0 .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#TIPOED> "Edificio s&oacute;lo con varias viviendas familiares" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#CONST> "1981-1990" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#ESTADO> "Bueno" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#PROP> "Una persona" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#ACCESIB> "Si" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#AGUA> "Abastecimiento p&uacute;blico" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#RESID> "Alcantarillado" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#PORTE> "No tiene" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#GARAJE> "No" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#GAS> "No" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#TELEF> "Si" .
+<http://census.lab216.com/censo/2001/edificios/000001> <http://census.lab216.com/censo/2001/edificio#ACAL> "Si" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#FAM> 1 .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CON> <http://census.lab216.com/censo/2001/personas/0000010003> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CNUCF> "Pertenece a un n&uacute;cleo familiar como padre/madre o pareja" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#FCONADU> "Con su pareja, dos hijos y sin padres" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#CONPARHIJ> "Con pareja y dos hijos" .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#PP> <http://census.lab216.com/censo/2001/personas/0000010001> .
+<http://census.lab216.com/censo/2001/personas/0000010001> <http://census.lab216.com/censo/2001/persona#NTOTHIJ> 2 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NMIEM> 4 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NFAM> 1 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NNUCH> 1 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NGENER> 2 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#EDADGR> 3 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#EDADGA> 33 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#ESTHOG> "Dos adultos y dos menores" .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#ESTHOG91> "De 2 adultos con 2 ni&ntilde;os menores 15 a&ntilde;os" .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#TIPOHOG> "Una familia, sin otras personas: Pareja con hijos" .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NOCU> 1 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NPARA> 1 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NPFAM> 4 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NNUCF1> 0 .
+<http://census.lab216.com/censo/2001/hogares/000001> <http://census.lab216.com/censo/2001/hogar#NNUCF2> 4 .

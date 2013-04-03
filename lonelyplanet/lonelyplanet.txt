@@ -1,0 +1,46 @@
+Lonely Planet
+
+Use the API to query for locations near this POI.
+Get a short list of nearby candidates (in XML), and grab their locations, names and LP ids.
+Do distance search and name matching to compute a match score, then if there's a good match, 
+Get the full record listing by querying for that LP id.
+Store that LP id in the POI along with a link to the data.
+Return info to the user.
+
+
+
+Useful links:
+http://developer.lplabs.com/index.php?title=Resources
+
+Using HTTP Basic:
+http://developer.lplabs.com/index.php?title=Using_HTTP_Basic
+
+ex: curl -u jXEee9MsPwAfgAQYMkLO2A:EAPCgR3QBDMdaeGNVwkraBPpu6E9je55JaIjNhBEWE http://api.lonelyplanet.com/api/bounding_boxes/46,45,11,10/pois
+ex: curl -u jXEee9MsPwAfgAQYMkLO2A:EAPCgR3QBDMdaeGNVwkraBPpu6E9je55JaIjNhBEWE http://api.lonelyplanet.com/api/pois/1012830
+
+http://developer.lplabs.com/index.php?title=The_Lonely_Planet_Content_API#Registering_your_application
+
+POI::
+	myid: 3c4d8d6c-bb9d-4e7a-8a3c-9fbac5120973
+label::
+	myid: 31544a50-cc8f-4294-a341-89d7ef9f5e6e
+	parentid: 3c4d8d6c-bb9d-4e7a-8a3c-9fbac5120973
+	value: Faneuil Hall / Union St
+location::
+	myid: 2e9ae8b5-c1c5-4cf6-b643-033ccd5fa7a0
+geo::
+	myid: fc258ce9-2571-482e-89c7-f13690924842
+	nativecoords: 42.360583 -71.056868
+
+
+POI::
+	myid: aab8fd3c-9a5a-4137-9c5e-59f0745621c8
+label:: 
+	myid: 02ae9311-20f3-470a-832e-f2f228913c77
+	parentid: 6e280ac0-6395-436e-9448-9b8c1b84ba8e
+	value: Harvard Square
+location::
+	myid: aab8fd3c-9a5a-4137-9c5e-59f0745621c8
+geo::
+	myid: 7785b222-5783-41a7-bfbc-9b3542c51679
+	nativecoords: 42.373393 -71.1189455

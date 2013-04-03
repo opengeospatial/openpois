@@ -1,0 +1,117 @@
+array(6) {
+  ["@attributes"]=>
+  array(1) {
+    ["id"]=>
+    string(37) "http://www.rajsingh.org/pois/45343489"
+  }
+  ["label"]=>
+  array(1) {
+    ["@attributes"]=>
+    array(1) {
+      ["term"]=>
+      string(6) "Boston"
+    }
+  }
+  ["description"]=>
+  array(2) {
+    ["value"]=>
+    string(373) "Boston is the capital of and largest city in Massachusetts, and is one of the oldest
+			cities in the United States. The largest city in New England, Boston is regarded as the
+			unofficial "Capital of New England" for its economic and cultural impact on the entire
+			New England region. The city proper had a population of 617,594 according to the 2010
+			U.S. Census.
+		"
+    ["author"]=>
+    array(2) {
+      ["@attributes"]=>
+      array(3) {
+        ["id"]=>
+        string(23) "http://en.wikipedia.org"
+        ["href"]=>
+        string(35) "http://en.wikipedia.org/wiki/Boston"
+        ["type"]=>
+        string(10) "text/plain"
+      }
+      ["value"]=>
+      string(9) "Wikipedia"
+    }
+  }
+  ["category"]=>
+  array(2) {
+    ["@attributes"]=>
+    array(2) {
+      ["term"]=>
+      string(4) "city"
+      ["scheme"]=>
+      string(30) "http://www.usgs.gov/placetypes"
+    }
+    ["value"]=>
+    string(45) "seat of a first-order administrative division"
+  }
+  ["link"]=>
+  array(3) {
+    [0]=>
+    array(1) {
+      ["@attributes"]=>
+      array(4) {
+        ["term"]=>
+        string(9) "canonical"
+        ["href"]=>
+        string(41) "http://www.rajsingh.org/pois/45343489.xml"
+        ["type"]=>
+        string(8) "text/xml"
+        ["scheme"]=>
+        string(65) "http://www.iana.org/assignments/link-relations/link-relations.xml"
+      }
+    }
+    [1]=>
+    array(1) {
+      ["@attributes"]=>
+      array(4) {
+        ["term"]=>
+        string(7) "related"
+        ["href"]=>
+        string(35) "http://en.wikipedia.org/wiki/Boston"
+        ["type"]=>
+        string(9) "text/html"
+        ["scheme"]=>
+        string(65) "http://www.iana.org/assignments/link-relations/link-relations.xml"
+      }
+    }
+    [2]=>
+    array(1) {
+      ["@attributes"]=>
+      array(4) {
+        ["term"]=>
+        string(7) "related"
+        ["href"]=>
+        string(54) "http://www.geonames.org/maps/google_42.358_-71.06.html"
+        ["type"]=>
+        string(9) "text/html"
+        ["scheme"]=>
+        string(65) "http://www.iana.org/assignments/link-relations/link-relations.xml"
+      }
+    }
+  }
+  ["location"]=>
+  array(1) {
+    ["point"]=>
+    array(2) {
+      ["@attributes"]=>
+      array(1) {
+        ["term"]=>
+        string(8) "centroid"
+      }
+      ["Point"]=>
+      array(2) {
+        ["@attributes"]=>
+        array(1) {
+          ["srsName"]=>
+          string(42) "http://www.opengis.net/def/crs/EPSG/0/4326"
+        }
+        ["posList"]=>
+        string(13) "42.358 -71.06"
+      }
+    }
+  }
+}

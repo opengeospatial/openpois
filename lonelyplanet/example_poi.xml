@@ -1,0 +1,38 @@
+<poi>
+  <name>www.restorant</name>
+  <alt-name></alt-name>
+  <digital-latitude>45.53983</digital-latitude>
+  <digital-longitude>10.22129</digital-longitude>
+  <latitude>45.53983</latitude>
+  <longitude>10.22129</longitude>
+  <emails type="array">
+  </emails>
+  <hours>12:00-13:30 &amp; 20:00-02:00 Mon-Sat</hours>
+  <prac-string></prac-string>
+  <price-range>2</price-range>
+  <price-string></price-string>
+  <urls type="array">
+  </urls>
+  <poi-type>Eat</poi-type>
+  <address>
+    <street>Vicolo Sant'Agostino 3b</street>
+    <locality>Brescia</locality>
+    <postcode></postcode>
+    <extras></extras>
+  </address>
+  <review>&lt;p&gt;This stylish spot is a great place for an &lt;em&gt;aperitivo,&lt;/em&gt; but most people head here for its outstanding fish dishes, including a wide choice of sweet lake-caught fish.&lt;/p&gt; </review>
+  <telephones type="array">
+    <telephone>
+      <area-code></area-code>
+      <number>030 375 22 54</number>
+      <text>tel, info</text>
+    </telephone>
+  </telephones>
+  <transports type="array">
+  </transports>
+  <representations type="array">
+    <representation type="lp.com" href="http://www.lonelyplanet.com/destinationRedirector?ethylCobjId=39749"/>
+    <representation type="msite" href="http://m.lonelyplanet.com/et-1000930079"/>
+    <representation type="msite.touch" href="http://touch.lonelyplanet.com/et-1000930079"/>
+  </representations>
+</poi>

@@ -1,0 +1,418 @@
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+<http://en.wikipedia.org/wiki/Haverhill,_Massachusetts>	foaf:primaryTopic	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+<http://mpii.de/yago/resource/Haverhill,_Massachusetts>	owl:sameAs	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix dbpprop:	<http://dbpedia.org/property/> .
+@prefix dbpedia:	<http://dbpedia.org/resource/> .
+dbpedia:Rob_Zombie	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix dbpedia-owl:	<http://dbpedia.org/ontology/> .
+dbpedia:Rob_Zombie	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Walter_Newell_Hill	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Spider_One	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Jon_Shain	dbpedia-owl:hometown	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:origin	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:John_Greenleaf_Whittier	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Fred_Sanborn	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Donald_J._Atwood_Jr.>	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Leverett_Saltonstall_I	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Milton_Reed	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Andre_Dubus	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Awake_(Godsmack_album)>	dbpedia-owl:recordedIn	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Ephraim_Davis_House	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Primrose_Street_Schoolhouse	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Washington_Street_Shoe_District	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Dan_Ross_(American_football)>	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/St._Michael_the_Archangel_Parish,_Haverhill>	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Danny_Mahoney	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Daniel_Appleton	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Marsha_Kazarosian	dbpprop:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:hometown	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:homeTown	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Area_codes_978_and_351	dbpprop:cityName	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Mike_Welch_(baseball)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Frank_Emilio	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:John_Mapes_Adams	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Todd_Thibaud	dbpedia-owl:hometown	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:origin	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Tom_Bergeron	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Shot_Down_Sun	dbpedia-owl:hometown	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:origin	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Hastings-Morse_House	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix yago:	<http://dbpedia.org/class/yago/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	rdf:type	yago:CitiesInMassachusetts ,
+		dbpedia-owl:PopulatedPlace ,
+		dbpedia-owl:Settlement .
+@prefix ns7:	<http://umbel.org/umbel/rc/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	rdf:type	ns7:City .
+@prefix ns8:	<http://schema.org/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	rdf:type	ns8:Place ,
+		yago:YagoGeoEntity ,
+		yago:PopulatedPlacesEstablishedIn1640 ,
+		dbpedia-owl:City ,
+		yago:EarlyAmericanIndustrialCenters ,
+		owl:Thing .
+@prefix ns9:	<http://www.opengis.net/gml/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	rdf:type	ns9:_Feature ,
+		dbpedia-owl:Place ,
+		ns8:City ;
+	owl:sameAs	<http://sws.geonames.org/4939085/> ,
+		<http://rdf.freebase.com/ns/m.0tz14> ,
+		<http://pl.dbpedia.org/resource/Haverhill_(Massachusetts)> ,
+		<http://fr.dbpedia.org/resource/Haverhill_(Massachusetts)> ,
+		<http://es.dbpedia.org/resource/Haverhill_(Massachusetts)> ,
+		<http://it.dbpedia.org/resource/Haverhill_(Massachusetts)> ,
+		<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix ns10:	<http://www.rdfabout.com/rdf/usgov/geo/us/ma/counties/essex_county/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	owl:sameAs	ns10:haverhill .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	rdfs:label	"Haverhill (Massachusetts)"@pl ,
+		"Haverhill (Massachusetts)"@ca ,
+		"Haverhill (Massachusetts)"@nl ,
+		"Haverhill (Massachusetts)"@es ,
+		"Haverhill, Massachusetts"@en ,
+		"Haverhill (Massachusetts)"@it ,
+		"Haverhill (Massachusetts)"@fr ,
+		"Haverhill, Massachusetts"@sv ,
+		"Haverhill, Massachusetts"@vi ,
+		"\u9ED1\u5F17\u91CC\u5C14 (\u9A6C\u8428\u8BF8\u585E\u5DDE)"@zh ;
+	rdfs:comment	"Haverhill, Massachusetts l\u00E0 m\u1ED9t th\u00E0nh ph\u1ED1 thu\u1ED9c qu\u1EADn qu\u1EADn trong bang Kh\u1ED1i th\u1ECBnh v\u01B0\u1EE3ng chung Massachusetts, Hoa K\u1EF3. Th\u00E0nh ph\u1ED1 c\u00F3 t\u1ED5ng di\u1EC7n t\u00EDch km2, trong \u0111\u00F3 di\u1EC7n t\u00EDch \u0111\u1EA5t l\u00E0 km2. Theo \u0111i\u1EC1u tra d\u00E2n s\u1ED1 Hoa K\u1EF3 n\u0103m 2010, th\u00E0nh ph\u1ED1 c\u00F3 d\u00E2n s\u1ED1 ng\u01B0\u1EDDi."@vi ,
+		"Haverhill is a city in Essex County, Massachusetts, United States. The population was 60,879 at the 2010 census. Located on the Merrimack River, it began as a farming community that would evolve into an important industrial center, beginning with sawmills and gristmills run by water power. In the 18th century, Haverhill developed tanneries, shipping and shipbuilding."@en ,
+		"Haverhill \u2013 miasto w USA, w hrabstwie Essex, w stanie Massachusetts."@pl ,
+		"\u9ED1\u5F17\u91CC\u723E \uFF08Haverhill, Massachusetts\uFF09\uFF0C\u662F\u7F8E\u570B\u9EBB\u85A9\u8AF8\u585E\u5DDE\u827E\u585E\u514B\u65AF\u7E23\u7684\u4E00\u500B\u57CE\u5E02\uFF0C\u5317\u9694\u6885\u91CC\u99AC\u514B\u6CB3\u8207\u65B0\u7F55\u5E03\u4EC0\u723E\u5DDE\u76F8\u671B\u3002\u9762\u7A4D92.3\u5E73\u65B9\u516C\u91CC\u3002\u6839\u64DA\u7F8E\u570B2000\u5E74\u4EBA\u53E3\u666E\u67E5\uFF0C\u4EBA\u53E358,969\u4EBA\u3002 1871\u5E74\u8A2D\u5E02\u3002"@zh ,
+		"Haverhill \u00E8 una citt\u00E0 degli Stati Uniti d'America facente parte della contea di Essex nello stato del Massachusetts. La citt\u00E0 sorge sulle rive del fiume Merrimack."@it ,
+		"Haverhill [\u02C8he\u026Avr\u026Al] \u00E4r en stad i Essex County, Massachusetts, USA, med 60\u00A0879 inv\u00E5nare."@sv ,
+		"Haverhill est une ville des \u00C9tats-Unis, dans le Comt\u00E9 d'Essex, Massachusetts, fond\u00E9e en 1640. La ville s'\u00E9tend sur 92,3 km\u00B2, comprenant 6 km\u00B2 d'eau (6,48\u00A0% de la surface totale). Au dernier recensement de 2000, la ville comptait 58 969 personnes, 22 976 foyers et 14 865 familles. La densit\u00E9 de population s'\u00E9levait \u00E0 683,1 personnes/km\u00B2."@fr ,
+		"Haverhill is een plaats in de Amerikaanse staat Massachusetts, en valt bestuurlijk gezien onder Essex County."@nl ,
+		"Haverhill es una ciudad ubicada en el condado de Essex en el estado estadounidense de Massachusetts. En el Censo de 2010 ten\u00EDa una poblaci\u00F3n de 60.879 habitantes y una densidad poblacional de 659,71 personas por km\u00B2."@es ,
+		"Haverhill \u00E9s una poblaci\u00F3 dels Estats Units a l'estat de Massachusetts. Segons el cens del 2010 tenia una poblaci\u00F3 de 60.521 habitants."@ca ;
+	foaf:depiction	<http://upload.wikimedia.org/wikipedia/commons/d/d7/Haverhill,_MA.jpg> ;
+	dbpedia-owl:thumbnail	<http://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Haverhill,_MA.jpg/200px-Haverhill,_MA.jpg> ;
+	foaf:name	"Haverhill, Massachusetts"@en ;
+	dbpprop:governmentType	<http://dbpedia.org/resource/Mayor%E2%80%93council_government> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+@prefix category:	<http://dbpedia.org/resource/Category:> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	dcterms:subject	category:Cities_in_Massachusetts ,
+		category:Early_American_industrial_centers ,
+		<http://dbpedia.org/resource/Category:Haverhill,_Massachusetts> ,
+		category:Populated_places_established_in_1640 ;
+	foaf:homepage	<http://www.ci.haverhill.ma.us/> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+@prefix geo:	<http://www.w3.org/2003/01/geo/wgs84_pos#> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	geo:lat	"42.7833"^^xsd:float ,
+		"42.7781"^^xsd:float ;
+	geo:long	"-71.085"^^xsd:float ,
+		"-71.0833"^^xsd:float ;
+	dbpedia-owl:governmentType	<http://dbpedia.org/resource/Mayor%E2%80%93council_government> .
+@prefix georss:	<http://www.georss.org/georss/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	georss:point	"42.778055555555554 -71.085"@en ,
+		"42.78333333333333 -71.08333333333333"@en .
+@prefix ns17:	<http://www.w3.org/ns/prov#> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	ns17:wasDerivedFrom	<http://en.wikipedia.org/wiki/Haverhill,_Massachusetts?oldid=494371035> ;
+	foaf:isPrimaryTopicOf	<http://en.wikipedia.org/wiki/Haverhill,_Massachusetts> .
+@prefix virtrdf:	<http://www.openlinksw.com/schemas/virtrdf#> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	geo:geometry	"POINT(-71.085 42.7781)"^^virtrdf:Geometry ,
+		"POINT(-71.085 42.7833)"^^virtrdf:Geometry ,
+		"POINT(-71.0833 42.7781)"^^virtrdf:Geometry ,
+		"POINT(-71.0833 42.7833)"^^virtrdf:Geometry ;
+	dbpprop:imageCaption	"Haverhill from across the Merrimack River"@en .
+@prefix ns19:	<http://dbpedia.org/resource/Template:> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	dbpprop:wikiPageUsesTemplate	ns19:Multiple_issues ,
+		ns19:Infobox_settlement ;
+	dbpprop:latd	"42"^^xsd:int ;
+	dbpprop:latm	"47"^^xsd:int ;
+	dbpprop:utcOffsetDst	"-4"^^xsd:int ;
+	dbpprop:areaTotalSqMi	"36"^^xsd:int ;
+	dbpprop:areaWaterSqMi	"2"^^xsd:int ;
+	dbpprop:coordinatesDisplay	"inline,title"@en .
+@prefix ns20:	<http://dbpedia.org/datatype/> .
+@prefix ns21:	<http://dbpedia.org/ontology/PopulatedPlace/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	ns21:populationDensity	"694.1"^^ns20:inhabitantsPerSquareKilometre ,
+		"694.5591730020059"^^ns20:inhabitantsPerSquareKilometre ;
+	dbpedia-owl:leaderTitle	"Mayor"@en ;
+	dbpedia-owl:type	dbpedia:City ;
+	dbpedia-owl:populationTotal	60879 ;
+	ns21:areaTotal	"92.3"^^ns20:squareKilometre ,
+		"92.2035767279616"^^ns20:squareKilometre ;
+	dbpprop:officialName	"Haverhill, Massachusetts"@en ;
+	dbpprop:areaLandSqMi	"33"^^xsd:int ;
+	dbpprop:leaderTitle	dbpedia:Mayor ;
+	dbpprop:timezoneDst	<http://dbpedia.org/resource/Eastern_Time_Zone_(North_America)> ;
+	dbpprop:mapsize	"250"^^xsd:int ;
+	dbpprop:populationTotal	"60879"^^xsd:int ;
+	dbpprop:establishedTitle	"Settled"@en ,
+		"Incorporated"@en ;
+	dbpedia-owl:abstract	"Haverhill est une ville des \u00C9tats-Unis, dans le Comt\u00E9 d'Essex, Massachusetts, fond\u00E9e en 1640. La ville s'\u00E9tend sur 92,3 km\u00B2, comprenant 6 km\u00B2 d'eau (6,48\u00A0% de la surface totale). Au dernier recensement de 2000, la ville comptait 58 969 personnes, 22 976 foyers et 14 865 familles. La densit\u00E9 de population s'\u00E9levait \u00E0 683,1 personnes/km\u00B2."@fr ,
+		"Haverhill, Massachusetts l\u00E0 m\u1ED9t th\u00E0nh ph\u1ED1 thu\u1ED9c qu\u1EADn qu\u1EADn trong bang Kh\u1ED1i th\u1ECBnh v\u01B0\u1EE3ng chung Massachusetts, Hoa K\u1EF3. Th\u00E0nh ph\u1ED1 c\u00F3 t\u1ED5ng di\u1EC7n t\u00EDch km2, trong \u0111\u00F3 di\u1EC7n t\u00EDch \u0111\u1EA5t l\u00E0 km2. Theo \u0111i\u1EC1u tra d\u00E2n s\u1ED1 Hoa K\u1EF3 n\u0103m 2010, th\u00E0nh ph\u1ED1 c\u00F3 d\u00E2n s\u1ED1 ng\u01B0\u1EDDi."@vi ,
+		"Haverhill \u00E8 una citt\u00E0 degli Stati Uniti d'America facente parte della contea di Essex nello stato del Massachusetts. La citt\u00E0 sorge sulle rive del fiume Merrimack."@it ,
+		"Haverhill \u2013 miasto w USA, w hrabstwie Essex, w stanie Massachusetts."@pl ,
+		"\u9ED1\u5F17\u91CC\u723E \uFF08Haverhill, Massachusetts\uFF09\uFF0C\u662F\u7F8E\u570B\u9EBB\u85A9\u8AF8\u585E\u5DDE\u827E\u585E\u514B\u65AF\u7E23\u7684\u4E00\u500B\u57CE\u5E02\uFF0C\u5317\u9694\u6885\u91CC\u99AC\u514B\u6CB3\u8207\u65B0\u7F55\u5E03\u4EC0\u723E\u5DDE\u76F8\u671B\u3002\u9762\u7A4D92.3\u5E73\u65B9\u516C\u91CC\u3002\u6839\u64DA\u7F8E\u570B2000\u5E74\u4EBA\u53E3\u666E\u67E5\uFF0C\u4EBA\u53E358,969\u4EBA\u3002 1871\u5E74\u8A2D\u5E02\u3002"@zh ,
+		"Haverhill [\u02C8he\u026Avr\u026Al] \u00E4r en stad i Essex County, Massachusetts, USA, med 60\u00A0879 inv\u00E5nare."@sv ,
+		"Haverhill \u00E9s una poblaci\u00F3 dels Estats Units a l'estat de Massachusetts. Segons el cens del 2010 tenia una poblaci\u00F3 de 60.521 habitants."@ca ,
+		"Haverhill is a city in Essex County, Massachusetts, United States. The population was 60,879 at the 2010 census. Located on the Merrimack River, it began as a farming community that would evolve into an important industrial center, beginning with sawmills and gristmills run by water power. In the 18th century, Haverhill developed tanneries, shipping and shipbuilding. The town was for many decades home to a significant shoe-making industry, by the end of 1913 Haverhill boasted one tenth of the shoes produced in America and because of this the town was known for a time as the \"Queen Slipper City. \" The city was also known for the manufacture of hats."@en ,
+		"Haverhill es una ciudad ubicada en el condado de Essex en el estado estadounidense de Massachusetts. En el Censo de 2010 ten\u00EDa una poblaci\u00F3n de 60.879 habitantes y una densidad poblacional de 659,71 personas por km\u00B2."@es ,
+		"Haverhill is een plaats in de Amerikaanse staat Massachusetts, en valt bestuurlijk gezien onder Essex County."@nl ;
+	dbpprop:longd	"71"^^xsd:int ;
+	dbpprop:longm	"5"^^xsd:int ;
+	dbpprop:establishedDate	"1641"^^xsd:int ,
+		"1640"^^xsd:int ,
+		"1870"^^xsd:int ;
+	dbpprop:populationAsOf	"2010"^^xsd:int ;
+	dbpprop:elevationM	"8"^^xsd:int ;
+	dbpprop:blankInfo	"25"^^xsd:int ;
+	dbpprop:blankName	dbpedia:Federal_Information_Processing_Standard ;
+	dbpprop:areaLandKm	"86"^^xsd:int ;
+	dbpprop:blank1Info	"612607"^^xsd:int ;
+	dbpedia-owl:areaLand	8.62466e+07 ,
+		8.63e+07 ;
+	dbpprop:latns	"N"@en ;
+	dbpprop:leaderName	"James J. Fiorentini"@en ;
+	dbpprop:blank1Name	"GNIS feature ID"@en ;
+	dbpprop:imageSkyline	"Haverhill, MA.jpg"@en ;
+	dbpprop:imagesize	"250"^^xsd:int ;
+	dbpprop:postalCode	"1830018310183201792"^^xsd:int ;
+	dbpprop:mapCaption	"Location in Essex County in Massachusetts"@en ;
+	dbpprop:subdivisionType	dbpedia:List_of_counties_in_Massachusetts ,
+		dbpedia:List_of_sovereign_states ,
+		dbpedia:Political_divisions_of_the_United_States ;
+	dbpprop:subdivisionName	"United States"@en ,
+		<http://dbpedia.org/resource/Essex_County,_Massachusetts> ,
+		dbpedia:Massachusetts ;
+	dbpedia-owl:isPartOf	<http://dbpedia.org/resource/Essex_County,_Massachusetts> ,
+		dbpedia:Massachusetts ;
+	dbpedia-owl:areaCode	"351 / 978"@en ;
+	dbpprop:coordinatesType	"region:US_type:city"@en ;
+	dbpprop:utcOffset	"-5"^^xsd:int ;
+	dbpprop:settlementType	dbpedia:City ;
+	dbpedia-owl:timeZone	<http://dbpedia.org/resource/Eastern_Time_Zone_(North_America)> ;
+	dbpedia-owl:wikiPageExternalLink	<http://www.haverhillhistory.org> ,
+		<http://books.google.com/books?id=IWgSAAAAYAAJ&printsec=frontcover&dq=subject:%22Essex+County+(Mass.)%22> ,
+		<http://memory.loc.gov/cgi-bin/query/D?gmd:48:./temp/~ammem_N8Th::> ,
+		<http://books.google.com/books?id=NlK1sIKJP_0C&printsec=frontcover&dq=Haverhill&as_brr=1> ,
+		<http://www.1911encyclopedia.org/Haverhill,_Massachusetts> ,
+		<http://query.nytimes.com/mem/archive-free/pdf?res=FB091FFF395F15738DDDA90A94DA405B8284F0D3> ,
+		<http://books.google.com/books?id=3MSFp5ek6XAC&printsec=frontcover&dq=Haverhill&as_brr=1#PPP9,M1> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?ImageName=PAGE_0164_0165.jpg&atlastype=Atlases&atlastown=ESSEX+COUNTY&atlas=ESSEX+COUNTY+1884&atlas_desc=ESSEX+COUNTY+1884&pageprefix=> ,
+		<http://www.hollowhill.com/ma/bradsum.htm> ,
+		<http://thehammersmithgroup.com/images/reports/haverhill_plan_sm.pdf> ,
+		<http://books.google.com/books?id=Bec-ASBxASIC&printsec=frontcover&dq=Haverhill&as_brr=1#PPP3,M1> ,
+		<http://www.rootsweb.com/~machaver/> ,
+		<http://www.ma-vitalrecords.org/EssexCounty/Haverhill/> ,
+		<http://books.google.com/books?id=C3EMAAAAYAAJ&pg=PA451&dq=subject:%22Essex+County+(Mass.)%22+HAVERHILL&lr=&as_brr=1#PPA451,M1> ,
+		<http://ia360609.us.archive.org/3/items/vitalrecordsofha00have/vitalrecordsofha00have_djvu.txt> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?ImageName=HAVERHILL.jpg&atlastype=Atlases&atlastown=ESSEX+COUNTY&atlas=ESSEX+COUNTY+1795&atlas_desc=ESSEX+COUNTY+1795&pageprefix=> ,
+		<http://books.google.com/books?id=RHEMAAAAYAAJ&printsec=frontcover&dq=Municipal+History+of+Essex+County+in+Massachusetts> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?atlastype=Atlases&atlastown=HAVERHILL&atlas=HAVERHILL%20-%20BRADFORD%201892&atlas_desc=HAVERHILL%20-%20BRADFORD%201892&pageprefix=> ,
+		<http://books.google.com/books?id=g3EMAAAAYAAJ&printsec=frontcover&dq=Municipal+History+of+Essex+County+in+Massachusetts> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?ImageName=HAVERHILL.jpg&atlastype=Atlases&atlastown=ESSEX+COUNTY&atlas=ESSEX+COUNTY+1830&atlas_desc=ESSEX+COUNTY+1830&pageprefix=> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?ImageName=PLATE_0032.jpg&atlastype=Atlases&atlastown=ESSEX+COUNTY&atlas=ESSEX+COUNTY+1872&atlas_desc=ESSEX+COUNTY+1872&pageprefix=> ,
+		<http://www.ci.haverhill.ma.us/> ,
+		<http://books.google.com/books?id=RvkMAAAAYAAJ&printsec=frontcover&dq=Haverhill> ,
+		<http://books.google.com/books?id=5PnyCHQz2ooC&printsec=frontcover&dq=haverhill+massachusetts&ei=3z2OScm7B4HCzgTknOS6BQ#PPP2,M1> ,
+		<http://www.hannahdustin.com/index2.html> ,
+		<http://www.mvrta.com/information/Haverhill_map/haverhill_map.html> ,
+		<http://www.salemdeeds.com/atlases_pages.asp?ImageName=PLATE_0035.jpg&atlastype=Atlases&atlastown=ESSEX+COUNTY&atlas=ESSEX+COUNTY+1872&atlas_desc=ESSEX+COUNTY+1872&pageprefix=> ,
+		<http://query.nytimes.com/mem/archive-free/pdf?res=FA0F12FA3D5910738DDDA00994DA405B8284F0D3> .
+@prefix ns22:	<http://www3.gendisasters.com/massachusetts/14034/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	dbpedia-owl:wikiPageExternalLink	ns22:haverhill-ma-city-fire-feb-1882 ,
+		<http://thehammersmithgroup.com/about/images/haunts.pdf> ,
+		<http://www.johngreenleafwhittier.com> ,
+		<http://docs.unh.edu/towns/HaverhillMassachusettsMapList.htm> .
+@prefix ns23:	<http://www.archive.org/details/> .
+<http://dbpedia.org/resource/Haverhill,_Massachusetts>	dbpedia-owl:wikiPageExternalLink	ns23:vitalrecordsofha00have ,
+		<http://memory.loc.gov/cgi-bin/query/D?gmd:47:./temp/~ammem_N8Th::> ;
+	dbpprop:hasPhotoCollection	<http://www4.wiwiss.fu-berlin.de/flickrwrappr/photos/Haverhill,_Massachusetts> ;
+	dbpprop:areaWaterKm	"6"^^xsd:int ;
+	dbpprop:elevationFt	"27"^^xsd:int ;
+	dbpedia-owl:areaWater	5.95697e+06 ,
+		6e+06 ;
+	dbpedia-owl:populationDensity	694.1 ,
+		694.559 ;
+	dbpprop:longew	"W"@en ;
+	dbpedia-owl:utcOffset	"-4"@en ,
+		"-5"@en ;
+	dbpprop:timezone	<http://dbpedia.org/resource/Eastern_Time_Zone_(North_America)> ;
+	dbpprop:areaTotalKm	"92"^^xsd:int ;
+	dbpprop:areaCode	"351"^^xsd:int ;
+	dbpedia-owl:areaTotal	9.22036e+07 ,
+		9.23e+07 ;
+	dbpprop:postalCodeType	"ZIP code"@en ;
+	dbpprop:imageMap	"Haverhill_ma_highlight.png"@en ;
+	dbpedia-owl:postalCode	"01830, 01831, 01832, 01835"@en ;
+	dbpprop:populationDensityKm	"694"^^xsd:int ;
+	dbpprop:populationDensitySqMi	"1799"^^xsd:int ;
+	dbpedia-owl:elevation	8.0 ,
+		8.2296 ;
+	dbpprop:citationStyle	"May 2010"@en ;
+	dbpprop:leadTooShort	"May 2010"@en .
+<http://dbpedia.org/resource/J._W._H._Pollard>	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Tim_Murray_(soccer)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:cityofbirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/James_H._Duncan>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Hal_Janvrin	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Jim_McGinley	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:New_Hampshire_Route_97	dbpedia-owl:routeEnd	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Massachusetts_Route_108	dbpedia-owl:routeStart	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Massachusetts_Route_113	dbpedia-owl:routeJunction	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Massachusetts_Route_125	dbpedia-owl:routeJunction	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Massachusetts_Route_97	dbpedia-owl:routeJunction	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Massachusetts_Route_110	dbpedia-owl:routeJunction	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Valley_Jr._Warriors>	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Haverhill_Police_Department_(Massachusetts)>	dbpprop:headquarters	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Duncan_MacDougall_(doctor)>	dbpprop:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:WCEC	dbpedia-owl:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Brian_Dempsey_(politician)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:James_Jajuga	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:William_Henry_Moody	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Edward_Follansbee_Noyes	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/John_Flannagan_(priest)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Joseph_Ruskin	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Bradford_College_(United_States)>	dbpedia-owl:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Jack_Ryan_(catcher)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Albert_Stone	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Main_Street_Historic_District_(Haverhill,_Massachusetts)>	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Peabody_School_(Haverhill,_Massachusetts)>	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Emerson_House_(Haverhill,_Massachusetts)>	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Karen_McCarthy	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Henry_Bacon_(painter)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Wesley_C._Miller>	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Frank_Wyman	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Haverhill_Board_of_Trade_Building	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Dustin_House	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Rocks_Village_Historic_District	dbpprop:nearestCity	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:nearestCity	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Raid_on_Haverhill	dbpedia-owl:place	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:place	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:William_Francis_Bartlett	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Henry_Gordon_Wells	dbpprop:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:residence	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:office	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:New_Hampshire_Route_108	dbpedia-owl:routeStart	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:New_Hampshire_Route_125	dbpedia-owl:routeStart	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:New_Hampshire_Route_121	dbpedia-owl:routeStart	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Gene_Goodreault	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Haverhill_Public_Library	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Haverill,_MA>	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Bradford_Common_Historic_District	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Zion_Bible_College	dbpedia-owl:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Mike_Ryan_(catcher)>	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:John_Bellairs	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Intervale_Factory	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Haverhill_Historical_Society_Historic_District	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Hazen-Spiller_House	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Nolan_Godfrey	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Alfa_Aesar	dbpedia-owl:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:location	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Whittier_Regional_Vocational_Technical_High_School	dbpedia-owl:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/James_Carr_(Massachusetts_politician)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Leonard_White_(politician)>	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:placeOfDeath	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:deathPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Ski_Bradford	dbpprop:nearestCity	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:nearestCity	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Sylvia_Hitchcock	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Haverhill,_MA>	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+@prefix ns24:	<http://dbpedia.org/resource/UN/LOCODE:> .
+ns24:USHAV	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Moses_Hazen	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpprop:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/National_Register_of_Historic_Places_listings_in_Essex_County,_Massachusetts>	dbpprop:city	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:John_Skladany	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Haverhill	dbpedia-owl:wikiPageDisambiguates	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Haverhill_(MA)>	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Gerry_Ashworth	dbpprop:placeOfBirth	<http://dbpedia.org/resource/Haverhill,_Massachusetts> ;
+	dbpedia-owl:birthPlace	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+<http://dbpedia.org/resource/Dr._Albert_B._Consentino_Middle_School>	dbpedia-owl:wikiPageRedirects	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .
+dbpedia:Merrimack_Valley_Regional_Transit_Authority	dbpprop:headquarters	<http://dbpedia.org/resource/Haverhill,_Massachusetts> .

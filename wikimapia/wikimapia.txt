@@ -1,0 +1,10 @@
+Wikimapia
+
+Use the API to query for locations near this POI.
+Get a short list of nearby candidates (in JSON), and grab their locations, names and Wikimapia ids.
+Do distance search and name matching to compute a match score, then if there's a good match, 
+Get the full record listing by querying for that Wikimapia id.
+Store that Wikimapia id in the POI along with a link to the JSON data.
+Return info to the user.
+
+http://wikimapia.org/api?action=how_to

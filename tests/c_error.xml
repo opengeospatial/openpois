@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<poi>
+	<link term="canonical" href="http://www.rajsingh.org/pois/45343489.xml" scheme="http://www.iana.org/assignments/link-relations/link-relations.xml" type="text/xml">
+	</link>
+	<link term="related" href="http://en.wikipedia.org/wiki/Boston" type="text/html" scheme="http://www.iana.org/assignments/link-relations/link-relations.xml"/>
+	<link term="related" href="http://www.geonames.org/maps/google_42.358_-71.06.html" type="text/html" scheme="http://www.iana.org/assignments/link-relations/link-relations.xml">
+	</link>
+	<relationship term="contains" targetPOI="http://www.rajsingh.org/pois/4534348"/>
+	<relationship term="within" targetPOI="http://www.rajsingh.org/pois/4534348"/>
+	<relationship term="contains" targetPOI="http://www.rajsingh.org/pois/453434891"/>
+</poi>

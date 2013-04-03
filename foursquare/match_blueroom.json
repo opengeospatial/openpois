@@ -1,0 +1,73 @@
+
+{
+    "meta":
+    {
+        "code":200
+    },
+    "response":
+    {
+        "venues":
+        [
+            {
+                "id":"4a29c4b5f964a520d8951fe3",
+                "name":"The Blue Room",
+                "contact":
+                {
+                    "phone":"6174949034",
+                    "formattedPhone":"(617) 494-9034"
+                },
+                "location":
+                {
+                    "address":"1 Kendall Sq",
+                    "lat":42.366194,
+                    "lng":-71.091017,
+                    "distance":33,
+                    "postalCode":"02139",
+                    "city":"Cambridge",
+                    "state":"MA",
+                    "country":"United States"
+                },
+                "categories":
+                [
+                    {
+                        "id":"4bf58dd8d48988d157941735",
+                        "name":"New American Restaurant",
+                        "pluralName":"New American Restaurants",
+                        "shortName":"New American",
+                        "icon":
+                        {
+                            "prefix":"https:\/\/foursquare.com\/img\/categories\/food\/default_",
+                            "sizes":
+                            [
+                                32,
+                                44,
+                                64,
+                                88,
+                                256
+                            ],
+                            "name":".png"
+                        },
+                        "primary":true
+                    }
+                ],
+                "verified":false,
+                "stats":
+                {
+                    "checkinsCount":1065,
+                    "usersCount":672,
+                    "tipCount":17
+                },
+                "url":"http:\/\/www.theblueroom.net",
+                "hereNow":
+                {
+                    "count":0
+                },
+                "menu":
+                {
+                    "url":"https:\/\/foursquare.com\/v\/the-blue-room\/4a29c4b5f964a520d8951fe3\/menu",
+                    "mobileUrl":"https:\/\/foursquare.com\/v\/4a29c4b5f964a520d8951fe3\/device_menu"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>documents</key>
+	<array>
+		<dict>
+			<key>filename</key>
+			<string>example_bbox.xml</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>example_poi.xml</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>lonelyplanet.txt</string>
+			<key>lastUsed</key>
+			<date>2012-02-06T03:34:50Z</date>
+			<key>selected</key>
+			<true/>
+		</dict>
+	</array>
+	<key>fileHierarchyDrawerWidth</key>
+	<integer>192</integer>
+	<key>metaData</key>
+	<dict/>
+	<key>showFileHierarchyDrawer</key>
+	<true/>
+	<key>windowFrame</key>
+	<string>{{503, 55}, {880, 743}}</string>
+</dict>
+</plist>

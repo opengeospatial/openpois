@@ -1,0 +1,254 @@
+<pois type="array">
+  <poi>
+    <id>1018944</id>
+    <name>44 Piatti</name>
+    <poi-type>Eat</poi-type>
+    <digital-latitude>45.13411</digital-latitude>
+    <digital-longitude>10.02526</digital-longitude>
+    <latitude>45.13411</latitude>
+    <longitude>10.02526</longitude>
+  </poi>
+  <poi>
+    <id>1067728</id>
+    <name>Albergo Aurora</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>45.44301</digital-latitude>
+    <digital-longitude>10.99677</digital-longitude>
+    <latitude>45.44301</latitude>
+    <longitude>10.99677</longitude>
+  </poi>
+  <poi>
+    <id>1138144</id>
+    <name>Albergo Duomo</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>45.13307515</digital-latitude>
+    <digital-longitude>10.02414133</digital-longitude>
+    <latitude>45.13307515</latitude>
+    <longitude>10.02414133</longitude>
+  </poi>
+  <poi>
+    <id>1012822</id>
+    <name>Albergo Orologio</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>45.53975</digital-latitude>
+    <digital-longitude>10.22082</digital-longitude>
+    <latitude>45.53975</latitude>
+    <longitude>10.22082</longitude>
+  </poi>
+  <poi>
+    <id>424905</id>
+    <name>Al Pompiere</name>
+    <poi-type>Eat</poi-type>
+    <digital-latitude>45.4418713926389</digital-latitude>
+    <digital-longitude>10.9979796409607</digital-longitude>
+    <latitude>45.4418713926389</latitude>
+    <longitude>10.9979796409607</longitude>
+  </poi>
+  <poi>
+    <id>1097507</id>
+    <name>Anfitheatro B&amp;B</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>45.44090382</digital-latitude>
+    <digital-longitude>10.99486153</digital-longitude>
+    <latitude>45.44090382</latitude>
+    <longitude>10.99486153</longitude>
+  </poi>
+  <poi>
+    <id>424925</id>
+    <name>Arche Scaligere</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.4436403744749</digital-latitude>
+    <digital-longitude>10.9990310668945</digital-longitude>
+    <latitude>45.4436403744749</latitude>
+    <longitude>10.9990310668945</longitude>
+  </poi>
+  <poi>
+    <id>1018955</id>
+    <name>Baptistry</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.13316</digital-latitude>
+    <digital-longitude>10.02502</digital-longitude>
+    <latitude>45.13316</latitude>
+    <longitude>10.02502</longitude>
+  </poi>
+  <poi>
+    <id>1040666</id>
+    <name>Basilica di Sant&#8217;Andrea</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.15907</digital-latitude>
+    <digital-longitude>10.79459</digital-longitude>
+    <latitude>45.15907</latitude>
+    <longitude>10.79459</longitude>
+  </poi>
+  <poi>
+    <id>424927</id>
+    <name>Basilica di San Zeno Maggiore</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.4425564092072</digital-latitude>
+    <digital-longitude>10.9791719913483</digital-longitude>
+    <latitude>45.4425564092072</latitude>
+    <longitude>10.9791719913483</longitude>
+  </poi>
+  <poi>
+    <id>1138129</id>
+    <name>Bicycle Kiosk</name>
+    <poi-type>Transport</poi-type>
+    <digital-latitude>45.53253682</digital-latitude>
+    <digital-longitude>10.21478955</digital-longitude>
+    <latitude>45.53253682</latitude>
+    <longitude>10.21478955</longitude>
+  </poi>
+  <poi>
+    <id>424907</id>
+    <name>Bottega del Vino</name>
+    <poi-type>Eat</poi-type>
+    <digital-latitude>45.4416003947773</digital-latitude>
+    <digital-longitude>10.9971749782562</digital-longitude>
+    <latitude>45.4416003947773</latitude>
+    <longitude>10.9971749782562</longitude>
+  </poi>
+  <poi>
+    <id>1138124</id>
+    <name>Bus Station</name>
+    <poi-type>Transport</poi-type>
+    <digital-latitude>45.5330901060042</digital-latitude>
+    <digital-longitude>10.2119494242334</digital-longitude>
+    <latitude>45.5330901060042</latitude>
+    <longitude>10.2119494242334</longitude>
+  </poi>
+  <poi>
+    <id>424915</id>
+    <name>Caff&#232; Antica Osteria al Duomo</name>
+    <poi-type>Night</poi-type>
+    <digital-latitude>45.44645</digital-latitude>
+    <digital-longitude>10.9988</digital-longitude>
+    <latitude>45.44645</latitude>
+    <longitude>10.9988</longitude>
+  </poi>
+  <poi>
+    <id>424917</id>
+    <name>Caff&#232; Filippini</name>
+    <poi-type>Night</poi-type>
+    <digital-latitude>45.44348588</digital-latitude>
+    <digital-longitude>10.99720624</digital-longitude>
+    <latitude>45.44348588</latitude>
+    <longitude>10.99720624</longitude>
+  </poi>
+  <poi>
+    <id>1040643</id>
+    <name>Caravatti</name>
+    <poi-type>Shop</poi-type>
+    <digital-latitude>45.15886</digital-latitude>
+    <digital-longitude>10.79476</digital-longitude>
+    <latitude>45.15886</latitude>
+    <longitude>10.79476</longitude>
+  </poi>
+  <poi>
+    <id>1097508</id>
+    <name>Casa Coloniale</name>
+    <poi-type>Sleep</poi-type>
+    <digital-latitude>45.44276459</digital-latitude>
+    <digital-longitude>10.99801156</digital-longitude>
+    <latitude>45.44276459</latitude>
+    <longitude>10.99801156</longitude>
+  </poi>
+  <poi>
+    <id>424929</id>
+    <name>Casa di Giulietta</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.44198</digital-latitude>
+    <digital-longitude>10.99843</digital-longitude>
+    <latitude>45.44198</latitude>
+    <longitude>10.99843</longitude>
+  </poi>
+  <poi>
+    <id>1040665</id>
+    <name>Casa di Rigoletto</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.16127</digital-latitude>
+    <digital-longitude>10.798</digital-longitude>
+    <latitude>45.16127</latitude>
+    <longitude>10.798</longitude>
+  </poi>
+  <poi>
+    <id>1138102</id>
+    <name>Castello</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.54274403</digital-latitude>
+    <digital-longitude>10.22527114</digital-longitude>
+    <latitude>45.54274403</latitude>
+    <longitude>10.22527114</longitude>
+  </poi>
+  <poi>
+    <id>1040672</id>
+    <name>Castello di San Giorgio</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.16086</digital-latitude>
+    <digital-longitude>10.79988</digital-longitude>
+    <latitude>45.16086</latitude>
+    <longitude>10.79988</longitude>
+  </poi>
+  <poi>
+    <id>424931</id>
+    <name>Castelvecchio Museum</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.4397184292767</digital-latitude>
+    <digital-longitude>10.9879267215729</digital-longitude>
+    <latitude>45.4397184292767</latitude>
+    <longitude>10.9879267215729</longitude>
+  </poi>
+  <poi>
+    <id>1138139</id>
+    <name>Cattedrale</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.13341353</digital-latitude>
+    <digital-longitude>10.02558668</digital-longitude>
+    <latitude>45.13341353</latitude>
+    <longitude>10.02558668</longitude>
+  </poi>
+  <poi>
+    <id>1138181</id>
+    <name>Cattedrale</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.16055492</digital-latitude>
+    <digital-longitude>10.79758493</digital-longitude>
+    <latitude>45.16055492</latitude>
+    <longitude>10.79758493</longitude>
+  </poi>
+  <poi>
+    <id>424933</id>
+    <name>Chiesa di San Fermo</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.43921</digital-latitude>
+    <digital-longitude>11.0</digital-longitude>
+    <latitude>45.43921</latitude>
+    <longitude>11.0</longitude>
+  </poi>
+  <poi>
+    <id>424935</id>
+    <name>Chiesa di San Lorenzo</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.44128</digital-latitude>
+    <digital-longitude>10.99124</digital-longitude>
+    <latitude>45.44128</latitude>
+    <longitude>10.99124</longitude>
+  </poi>
+  <poi>
+    <id>1012836</id>
+    <name>Civico Museo del Risorgimento</name>
+    <poi-type>See</poi-type>
+    <digital-latitude>45.54269</digital-latitude>
+    <digital-longitude>10.2254</digital-longitude>
+    <latitude>45.54269</latitude>
+    <longitude>10.2254</longitude>
+  </poi>
+  <poi>
+    <id>1040640</id>
+    <name>Clos Wine Bar</name>
+    <poi-type>Eat</poi-type>
+    <digital-latitude>45.15833</digital-latitude>
+    <digital-longitude>10.79241</digital-longitude>
+    <latitude>45.15833</latitude>
+    <longitude>10.79241</longitude>
+  </poi>
+</pois>

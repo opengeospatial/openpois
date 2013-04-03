@@ -1,0 +1,33 @@
+<poi>
+  <name>Harvard Sq</name>
+  <alt-name></alt-name>
+  <digital-latitude>42.3739323167086</digital-latitude>
+  <digital-longitude>-71.1197230786364</digital-longitude>
+  <latitude>42.3739323167086</latitude>
+  <longitude>-71.1197230786364</longitude>
+  <emails type="array">
+  </emails>
+  <hours></hours>
+  <prac-string></prac-string>
+  <price-range></price-range>
+  <price-string></price-string>
+  <urls type="array">
+  </urls>
+  <poi-type>General</poi-type>
+  <address>
+    <street></street>
+    <locality></locality>
+    <postcode></postcode>
+    <extras></extras>
+  </address>
+  <review> </review>
+  <telephones type="array">
+  </telephones>
+  <transports type="array">
+  </transports>
+  <representations type="array">
+    <representation type="lp.com" href="http://www.lonelyplanet.com/destinationRedirector?ethylCobjId=10528"/>
+    <representation type="msite" href="http://m.lonelyplanet.com/et-"/>
+    <representation type="msite.touch" href="http://touch.lonelyplanet.com/et-"/>
+  </representations>
+</poi>

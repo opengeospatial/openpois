@@ -1,0 +1,37 @@
+(POI property) = (common ontology property)
+
+label = rdfs:label
+label = foaf:name
+
+description = dbpedia-owl:abstract
+description = rdfs:comment
+
+link = rdfs:seeAlso
+
+term = dcterms:subject => category:fsadfa
+scheme = rdfs:domain
+
+Location = dcterms:Location
+Point = dcterms:Point
+point = georss:point 
+posList = geo:geometry
+geo:lat
+geo:long
+
+type = rdf:type
+
+start = dbpprop:establishedDate 
+
+created = dcterms:created
+modified = dcterms:modified
+deleted = 
+
+References:
+http://www.w3.org/wiki/Good_Ontologies
+http://www.rdfabout.com/demo/validator/
+http://www.slideshare.net/mediasemanticweb/linked-data-michael-hausenblas-2009-03-05
+http://www.ninebynine.org/RDFNotes/RDFForLittleLanguages.htm
+http://opensahara.com/en/blog/geospatial-search-rdf-data
+
+http://dbpedia.org/page/Haverhill,_Massachusetts
+

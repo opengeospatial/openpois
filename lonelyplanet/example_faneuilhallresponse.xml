@@ -1,0 +1,46 @@
+<poi>
+  <name>Faneuil Hall</name>
+  <alt-name></alt-name>
+  <digital-latitude>42.3599689506968</digital-latitude>
+  <digital-longitude>-71.0561233823074</digital-longitude>
+  <latitude>42.3599689506968</latitude>
+  <longitude>-71.0561233823074</longitude>
+  <emails type="array">
+  </emails>
+  <hours>9am-5pm</hours>
+  <prac-string></prac-string>
+  <price-range></price-range>
+  <price-string>admission free</price-string>
+  <urls type="array">
+    <url>www.faneuilhall.com</url>
+  </urls>
+  <poi-type>See</poi-type>
+  <address>
+    <street>Congress St</street>
+    <locality></locality>
+    <postcode></postcode>
+    <extras></extras>
+  </address>
+  <review>&lt;p&gt;&#8216;Those who cannot bear free speech had best go home,&#8217; said Wendell Phillips. &#8216;Faneuil Hall is no place for slavish hearts.&#8217; Indeed, this public meeting place was the site of so much rabble-rousing that it earned the nickname the &#8216;Cradle of Liberty&#8217;.&lt;/p&gt;
+&lt;p&gt;Although the hall was supposed to be exclusively for local issues, the Sons of Liberty called many meetings here, informing public opinion about their objections to British taxation without representation. In December of 1773 meetings concerning the controversial consignment of tea that had recently arrived in Boston Harbor were drawing so many townspeople that they had to move to the larger Old South Meeting House. In later years Faneuil Hall was a forum for meetings about abolition, women&#8217;s suffrage and war.&lt;/p&gt;
+&lt;p&gt;The brick colonial building &#8211; topped with the beloved grasshopper weather vane &#8211; was constructed in 1740 at the urging of Boston benefactor and merchant Peter Faneuil. In 1805 Charles Bulfinch enlarged the building and enclosed the 1st-floor market, and designed the 2nd-floor meeting space, where public ceremonies are still held today. It&#8217;s normally open to the public, who can hear about the building&#8217;s history from NPS rangers. On the 3rd floor the Ancient &amp;amp; Honorable Artillery Co of Massachusetts, which was chartered in 1638, maintains a peculiar collection of antique firearms, political mementos and curious artifacts.&lt;/p&gt;
+ </review>
+  <telephones type="array">
+    <telephone>
+      <area-code>617</area-code>
+      <number>242 5642</number>
+      <text></text>
+    </telephone>
+  </telephones>
+  <transports type="array">
+    <transport>
+      <transport-type>underground rail</transport-type>
+      <description>Haymarket or Aquarium</description>
+    </transport>
+  </transports>
+  <representations type="array">
+    <representation type="lp.com" href="http://www.lonelyplanet.com/poiRedirector?poiId=377145"/>
+    <representation type="msite" href="http://m.lonelyplanet.com/et-10722"/>
+    <representation type="msite.touch" href="http://touch.lonelyplanet.com/et-10722"/>
+  </representations>
+</poi>
