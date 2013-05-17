@@ -2,7 +2,7 @@
 
 $projbase = '/srv/openpoidb';
 $appbase = $projbase . '/application';
-$ogcbaseuri = 'http://openpoi.ogcnetwork.net/pois';
+$ogcbaseuri = 'http://openpois.ogcnetwork.net/pois';
 $adminemail = 'openpoiadmin@opengeospatial.org'; //'rsingh@opengeospatial.org';
 // $openplaceserrorlog = '/Users/rajsingh/workspace/openpoidb/application/error_openplaces.log';
 $iana = 'http://www.iana.org/assignments/link-relations/link-relations.xml';

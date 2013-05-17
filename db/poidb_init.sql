@@ -91,6 +91,15 @@ CREATE TABLE poilog (
 );
 
 
+CREATE OR REPLACE FUNCTION update_poihref() RETURNS trigger AS $poibasetype$
+BEGIN 
+  IF ( NEW.objname LIKE 'POI' ) THEN 
+    NEW.href := 'http://openpois.ogcnetwork.net/pois/' || NEW.myid;
+  END IF;
+  RETURN NEW;
+END;
+$poibasetype$ LANGUAGE plpgsql;
+
 CREATE OR REPLACE FUNCTION update_geography() RETURNS trigger AS $$
 BEGIN 
   NEW.geogpt = geography(NEW.geompt);
@@ -98,14 +107,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER update_geography_geo BEFORE INSERT OR UPDATE 
-  ON geo FOR EACH ROW 
-  EXECUTE PROCEDURE update_geography();
+CREATE TRIGGER update_poi_href BEFORE INSERT OR UPDATE ON poibasetype 
+  FOR EACH ROW 
+    EXECUTE PROCEDURE update_poihref();
+
+CREATE TRIGGER update_geography_geo BEFORE INSERT OR UPDATE ON geo 
+  FOR EACH ROW 
+    EXECUTE PROCEDURE update_geography();
 
 
 CREATE VIEW minipoi AS 
-SELECT geo.oid as oid, loc.parentid AS poiuuid, labels.value as label, geo.geompt AS geompt, geo.geogpt AS geogpt  
-from poitermtype labels, geo, location loc 
+SELECT geo.oid as oid, loc.parentid AS poiuuid, labels.value as label, geo.geompt AS geompt, geo.geogpt AS geogpt, ('http://openpois.ogcnetwork.net/pois/'||loc.parentid) as href 
+FROM poitermtype labels, geo, location loc 
 WHERE geo.parentid = loc.myid AND labels.parentid = loc.parentid AND labels.objname LIKE 'LABEL' 
 AND geo.deleted IS NULL AND loc.deleted IS NULL AND labels.deleted IS NULL;
 

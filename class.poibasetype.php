@@ -41,8 +41,14 @@ Class POIBaseType {
     $poibaseobj->myid = $xml['myid'];
     if ( empty($poibaseobj->myid) ) $poibaseobj->myid = gen_uuid();
     // set this upon return if necessary
-    // $poibaseobj->parentid = $xml['parentid']; 
-    $poibaseobj->value = (string)$xml->value;
+    // $poibaseobj->parentid = $xml['parentid'];
+		if ( !empty( $xml['value'] ) ) { // try <value> child element
+			$poibaseobj->value = $xml['value'];
+		} else if ( !empty( $xml->value) ) { // try attribute
+	    $poibaseobj->value = $xml->value;
+		} else if ( !empty( $xml[0] ) ) { // try CDATA of element
+			$poibaseobj->value = htmlspecialchars( $xml[0] );
+		}
     $poibaseobj->base = $xml['base'];
     $poibaseobj->href = $xml['href'];
     $poibaseobj->type = $xml['type'];

@@ -6,8 +6,10 @@ require_once('constants.php');
 require_once('conflate.php');
 
 //// read file and pull out each <poi> element
-$fn = "/databases/futouring/futouring_pois.xml";
+// $fn = "/databases/futouring/futouring_pois.xml";
+$fn = "/databases/ourairports/1ec0ca5a-c727-470a-ac62-7f7d8391aba4.xml";
 // $fn = "/databases/futouring/f.xml";
+$fn = "/databases/b2b/manning.xml";
 $file = $projbase . $fn;
 $file_handle = fopen($file, "r");
 $xmltext = '';

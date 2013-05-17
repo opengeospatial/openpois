@@ -144,6 +144,8 @@ Class POI extends POIBaseType {
    * If no match, add a new one and (optionally) write to the database and return true. 
    */
   public function updatePOITermTypeProperty($ptt, $writedb=FALSE) {
+		if ( empty($ptt) ) return false;
+		
     $t = $ptt->getTypeName();
     $props = null;
     if ( $t == 'LABEL') $props = $this->labels;
@@ -704,6 +706,12 @@ Class POI extends POIBaseType {
   function removeDescription($idx) {
     $this->removeObjectByIndex($this->descriptions, $idx);
     $changed = true;
+  }
+  
+  function getFirstLabelName() {
+    if ( empty($this->labels[0]) ) return false;
+    $l = $this->labels[0];
+    return $l->getValue();
   }
 
   function addLabel($label) {
