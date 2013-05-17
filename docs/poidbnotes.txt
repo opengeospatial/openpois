@@ -1,0 +1,59 @@
+# .htaccess is now...
+RewriteEngine On
+RewriteRule ^pois/(.*)$ poiquerybyuuid.php?id=$1 
+RewriteRule ^poiwms$ /cgi-bin/mapserv?map=/srv/web/openpoidb/ms/op.map& [QSA]
+
+
+#Mapserver
+Package: cgi-mapserver (5.6.5-2+squeeze2) 
+installed by Kevin?
+list files: dpkg -L cgi-mapserver
+/usr/lib/cgi-bin/mapserv
+dpkg -L libproj0
+dpkg -L proj-data
+
+added to top of /usr/share/proj/epsg:
+# Google Projection
+<900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs <>
+
+
+modified /etc/php5/cli/php.ini and /etc/php5/apache2/php.ini to include my code in /srv/openpoidb/application
+
+#installed pgbouncer to try to get better PHP->PostgreSQL performance:
+#sudo apt-get install pgbouncer
+#then uninstalled it!
+
+installed libcurl3, libssh2-1, and php5-curl to use curl to download files in PHP:
+sudo apt-get install libcurl3
+sudo apt-get install php5-curl 
+
+modified these files to allow user rajs to log into postgresql as different users:
+/etc/postgresql/8.4/main/pg_ident.conf
+/etc/postgresql/8.4/main/pg_hba.conf
+
+createuser -U postgres --pwprompt poidbadmin
+Enter password for new role: poidbadminpw
+createuser -U postgres --no-superuser --no-createdb --no-createrole --pwprompt poiwebuser
+Enter password for new role: fungwabus
+
+createdb -U postgres openpoidb
+createlang -U postgres plpgsql openpoidb
+psql -U poidbadmin -d openpoidb -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
+psql -U postgres -d openpoidb -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql
+
+createdb -U postgres openpoidbdev
+createlang -U postgres plpgsql openpoidbdev
+psql -U poidbadmin -d openpoidbdev -f /usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql
+psql -U postgres -d openpoidbdev -f /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql
+
+
+as user postgres:
+postgres=# GRANT CONNECT ON DATABASE openpoidb TO poiwebuser;
+postgres=# GRANT SELECT,REFERENCES,TRIGGER ON TABLE geo,geometry_columns,location,poibasetype,poitermtype,relationship,spatial_ref_sys,minipoi TO poiwebuser;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE openpoidb TO poidbadmin WITH GRANT OPTION;
+
+postgres=# GRANT ALL PRIVILEGES ON DATABASE openpoidbdev TO poiwebuser;
+postgres=# REVOKE CREATE ON DATABASE openpoidbdev FROM poiwebuser;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE openpoidbdev TO poidbadmin WITH GRANT OPTION;
+
+
