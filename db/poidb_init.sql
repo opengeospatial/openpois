@@ -94,7 +94,7 @@ CREATE TABLE poilog (
 CREATE OR REPLACE FUNCTION update_poihref() RETURNS trigger AS $poibasetype$
 BEGIN 
   IF ( NEW.objname LIKE 'POI' ) THEN 
-    NEW.href := 'http://openpois.ogcnetwork.net/pois/' || NEW.myid;
+    NEW.href := 'http://openpois.net/pois/' || NEW.myid;
   END IF;
   RETURN NEW;
 END;
@@ -117,7 +117,7 @@ CREATE TRIGGER update_geography_geo BEFORE INSERT OR UPDATE ON geo
 
 
 CREATE VIEW minipoi AS 
-SELECT geo.oid as oid, loc.parentid AS poiuuid, labels.value as label, geo.geompt AS geompt, geo.geogpt AS geogpt, ('http://openpois.ogcnetwork.net/pois/'||loc.parentid) as href 
+SELECT geo.oid as oid, loc.parentid AS poiuuid, labels.value as label, geo.geompt AS geompt, geo.geogpt AS geogpt, ('http://openpois.net/pois/'||loc.parentid) as href 
 FROM poitermtype labels, geo, location loc 
 WHERE geo.parentid = loc.myid AND labels.parentid = loc.parentid AND labels.objname LIKE 'LABEL' 
 AND geo.deleted IS NULL AND loc.deleted IS NULL AND labels.deleted IS NULL;

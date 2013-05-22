@@ -9,9 +9,18 @@ require_once('conflate.php');
 // $fn = "/databases/futouring/futouring_pois.xml";
 $fn = "/databases/ourairports/1ec0ca5a-c727-470a-ac62-7f7d8391aba4.xml";
 // $fn = "/databases/futouring/f.xml";
-$fn = "/databases/b2b/manning.xml";
+$fn = "/databases/b2b/gaia3d.xml";
 $file = $projbase . $fn;
-$file_handle = fopen($file, "r");
+$file_handle = null;
+try {
+	if ( !file_exists($file) ) die("Could not find $file\n");
+	$file_handle = fopen($file, "r");	
+} catch (Exception $e) {
+	echo("Could not open $file\n");
+	die($e->getMessage());
+}
+if ( empty($file_handle) ) die("Could not open $file\n");
+
 $xmltext = '';
 $innode = FALSE;
 while (!feof($file_handle)) {  
