@@ -9,7 +9,7 @@ require_once('conflate.php');
 // $fn = "/databases/futouring/futouring_pois.xml";
 $fn = "/databases/ourairports/1ec0ca5a-c727-470a-ac62-7f7d8391aba4.xml";
 // $fn = "/databases/futouring/f.xml";
-$fn = "/databases/b2b/gaia3d.xml";
+$fn = "/databases/b2b/ati-kos.xml";
 $file = $projbase . $fn;
 $file_handle = null;
 try {

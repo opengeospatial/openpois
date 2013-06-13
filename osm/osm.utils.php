@@ -124,7 +124,7 @@ function goodNodeToPOI($xml) {
     $poi = new POI( gen_uuid(), $ogcbaseuri);
     $poi->changed = TRUE;
 
-    // if there was no match, then location is needed, otherwise skip this and only store existing location
+    // if there was no match, then location is needed
     $loc = new Location();
 
     // points
@@ -137,6 +137,14 @@ function goodNodeToPOI($xml) {
     $loc->addPointGeom($geom);
     $poi->location = $loc;
   }
+
+	// if we are conflating, add the OSM location as an alternate
+  // points
+  $poslist = (string)$xml->attributes()->lat . ' ' . (string)$xml->attributes()->lon;
+  $geom = new Geom('point', 'Point', $poslist, 'osm');
+  $geom->author = getOSMAuthor();
+  $geom->setLicense( getOSMLicense() );
+  $poi->location->addPointGeom($geom);
   
   // if there's no label, or no exact label match, then add a new label
   $labelmatch = false;

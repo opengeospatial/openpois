@@ -547,20 +547,20 @@ Class POIBaseType {
     return $this->id;
   }
 
-  // id must be a url, or must be a url when appended to the base value
+  // NOT ANYMORE!! id must be a url, or must be a url when appended to the base value
   public function setId($id) {
-    if ( validateURL($id) ) {
+    // if ( validateURL($id) ) {
       $this->id = $id;
       $this->changed = true;
       return TRUE;
-    } else {
-      $u = $this->base . '/' . $id;
-      if ( validateURL($u) ) {
-        $this->id = $id;
-        return TRUE;
-      }
-      return FALSE;
-    }
+    // } else {
+    //   $u = $this->base . '/' . $id;
+    //   if ( validateURL($u) ) {
+    //     $this->id = $id;
+    //     return TRUE;
+    //   }
+    //   return FALSE;
+    // }
   }
 
   public function getHref() {
