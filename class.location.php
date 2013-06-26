@@ -193,7 +193,7 @@ Class Location extends POIBaseType {
   public static function deleteDB($uuid, $conn, $reallydelete=FALSE, $tablename='location') {
     try {
       // delete all relationships
-      $sql = "SELECT myid FROM relationship WHERE parentid = '" . $uuid . "' AND deleted is NULL";
+      $sql = "SELECT myid FROM relationship WHERE parentid = '$uuid'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {
@@ -202,7 +202,7 @@ Class Location extends POIBaseType {
       }
       
       // delete any address
-      $sql = "SELECT myid FROM poibasetype WHERE parentid = '" . $uuid . "' AND objname like 'ADDRESS' AND deleted is NULL";
+      $sql = "SELECT myid FROM poibasetype WHERE parentid = '$uuid' AND objname like 'ADDRESS'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {
@@ -211,7 +211,7 @@ Class Location extends POIBaseType {
       }
       
       // delete all geometries
-      $sql = "SELECT myid FROM geo WHERE parentid = '" . $uuid . "' AND deleted is NULL";
+      $sql = "SELECT myid FROM geo WHERE parentid = '$uuid'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {

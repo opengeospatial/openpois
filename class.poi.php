@@ -451,8 +451,8 @@ Class POI extends POIBaseType {
       
       // get the location for the poi
       $sql = "SELECT myid FROM location WHERE ";
-      $sql .= "parentid = '" . $myid . "'" . $sbiclause;
-      $sql .= " AND objname LIKE 'LOCATION' AND deleted IS NULL";
+      $sql .= "parentid = '$myid'"; // . $sbiclause;
+      $sql .= " AND objname LIKE 'LOCATION'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {
@@ -462,7 +462,7 @@ Class POI extends POIBaseType {
 
       // delete all poitermtypes
       $sql = "SELECT myid FROM poitermtype WHERE ";
-      $sql .= "parentid = '" . $myid . " AND deleted is NULL";
+      $sql .= "parentid = '$myid'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {
@@ -472,7 +472,7 @@ Class POI extends POIBaseType {
       
       // delete all poibasetypes
       $sql = "SELECT myid FROM poibasetype WHERE ";
-      $sql .= "parentid = '" . $myid . " AND deleted is NULL";
+      $sql .= "parentid = '$myid'";
       $c = $conn->query($sql);
       if ( $c ) {
         foreach ($c as $row) {
@@ -481,6 +481,16 @@ Class POI extends POIBaseType {
       }
 
       // metadata unimplemented
+
+			// delete the POI itself
+      $sql = "SELECT myid FROM poibasetype WHERE ";
+      $sql .= "myid = '$myid'";
+      $c = $conn->query($sql);
+      if ( $c ) {
+        foreach ($c as $row) {
+          POIBaseType::deleteDB($row['myid'], $conn, $reallydelete);
+        }
+      }
 
       $conn->commit();      
     } catch (Exception $e) {

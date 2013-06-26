@@ -162,7 +162,7 @@ Class POIBaseType {
       }
       
       if ( $reallydelete ) {
-        $sql = "DELETE FROM $tablename WHERE myid='$uuid' AND deleted IS NULL";
+        $sql = "DELETE FROM $tablename WHERE myid='$uuid'";
       } else {
         $sql = "UPDATE $tablename SET updated = 'now', deleted = 'now' WHERE myid = '" . $uuid . "' AND deleted is NULL";
       }

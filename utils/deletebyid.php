@@ -25,7 +25,7 @@ if ( isset($argv[2]) ) {
 $p = POI::deleteDB($pid, false, $reallydelete);
 
 if ( $p == FALSE ) {
-  echo "Couldn't load POI.\n";
+  echo "Couldn't delete POI.\n";
   exit(-1);
 }
 
