@@ -12,10 +12,10 @@ Class POITermType extends POIBaseType {
    * @param typename POI type of the object. Used to override using the name of the XML element
    * @param poitermobj poitermtype PHP object to load data into. If null, then create a new one
    */
-  static function loadXMLData($xml, $typename=NULL, &$poitermobj=NULL) {
+  static function loadXMLData($xml, $typename=NULL, $poitermobj=NULL, $author=NULL) {
     if ( empty($typename) ) $typename = strtoupper($xml->getName());
     if ( empty($poitermobj) ) $poitermobj = new POITermType($typename, $xml['term'] );
-    $poitermobj = POIBaseType::loadXMLData($xml, $typename, $poitermobj);
+    $poitermobj = POIBaseType::loadXMLData($xml, $typename, $poitermobj, $author);
     $poitermobj->setTerm($xml['term']);
     if ( !empty($xml['scheme']) ) $poitermobj->setScheme($xml['scheme']);
     

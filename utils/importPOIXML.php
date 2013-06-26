@@ -9,7 +9,7 @@ require_once('conflate.php');
 // $fn = "/databases/futouring/futouring_pois.xml";
 $fn = "/databases/ourairports/1ec0ca5a-c727-470a-ac62-7f7d8391aba4.xml";
 // $fn = "/databases/futouring/f.xml";
-$fn = "/databases/b2b/ati-kos.xml";
+$fn = "/databases/b2b/lisafe.xml";
 $file = $projbase . $fn;
 $file_handle = null;
 try {
@@ -29,12 +29,12 @@ while (!feof($file_handle)) {
   if ( $innode ) {
     $xmltext .= $line . "\n";
 
-    if ( strpos($line, '</poi>') !== FALSE ) {  // THIS IS THE MONEY SECTION!!!!!      
+		////// THIS IS THE MONEY SECTION!!!!!
+    if ( strpos($line, '</poi>') !== FALSE ) {
       $poi = POI::loadXMLData( simplexml_load_string($xmltext) ); // take the text <poi> element and make it PHP
-      $poi = conflatePOI($poi);   // NOW CONFLATE IT
+      $poi = conflatePOI($poi, TRUE);   // NOW CONFLATE IT and PERSIST IT
       
-      $newid = $poi->updateDB();  // AND PERSIST IT!!!!
-      echo ("imported POI with ID: $newid and name: " . $poi->labels[0]->value . "\n");
+      echo ("imported POI with ID: $poi->myid and name: " . $poi->labels[0]->value . "\n");
 
       $innode = FALSE;
       $xmltext = '';
@@ -48,7 +48,7 @@ while (!feof($file_handle)) {
   }
 }
 
-function conflatePOI($poi, $maxdistance=2000) {
+function conflatePOI($poi, $writedb=FALSE, $maxdistance=2000) {
   // get distance matches
   $lat = (double)$poi->location->getY();
   $lon = (double)$poi->location->getX();
@@ -64,12 +64,12 @@ function conflatePOI($poi, $maxdistance=2000) {
   // select a top match
   $thematch = NULL;
   if ( $matches != NULL && sizeof($matches) > 0 ) {
-
-    foreach($matches as $m) {
-      $m->computeScore(); // echo "Match score is: $m->score\n";
+    foreach ($matches as &$m) {
+      $m->computeScore();
+			echo "Match score is: $m->score\n";
     }
 
-    foreach($matches as $m) {
+    foreach($matches as &$m) {
       if ( ($thematch == NULL || $m->score > $thematch->score) && $m->poiuuid != NULL ) {
         $thematch = $m;
       }
@@ -77,18 +77,23 @@ function conflatePOI($poi, $maxdistance=2000) {
   }
 
   // make sure that top match is at least a certain score
-  if ( $thematch != NULL && $thematch->score > 0.700 ) {
+  if ( $thematch != NULL && $thematch->score < 0.250 ) {
     $poimaster = POI::loadPOIUUID($thematch->poiuuid);
     $id = $poimaster->getMyId();
     echo "\nGOT A MATCH!!!!!!!!\n";
-    echo "OSM POI: $name, lat: $lat, lon: $lon, ID: $id\n";
-    echo "matched:\n";
+    echo "Input POI: $name, lat: $lat, lon: $lon, ID: $id\n";
+    echo "Matched and merged with:\n";
     foreach ($thematch->labels as $label=>$score) {
       echo ($label . ">> distance: " . $thematch->dist);
       echo (" name score: " . $score . " total score: " . $thematch->score . "\n");
     }
-    $poi = $poimaster->mergePOI($poi);
-  } 
-  return $poi;
+		// echo "poimaster\n";echo $poimaster->asXML(false,true);die;
+    $poi = $poimaster->mergePOI($poi, $writedb);
+  
+	} else if ( $writedb ) {
+		$poi->updateDB();
+	} 
+  
+	return $poi;
 }
 ?>

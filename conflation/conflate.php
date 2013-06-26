@@ -12,7 +12,7 @@ include_once('String-Similarity.php');
  * sense especially if matches are passed in order of closest first, so that a match that's 
  * close in distance, that then scores above 90% for the name, is likely to be the right one)
  */
-function getPOINames($name, $matches, $guessbest=FALSE, $levchanges=5) {
+function getPOINames($name, $matches, $guessbest=FALSE, $levmaxratio=0.20) {
   if ( empty($matches) ) return NULL;
   $newmatches = array();
   $comp = new StringMatch();
@@ -52,17 +52,18 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levchanges=5) {
               
               //// The Levenshtein distance is defined as the minimal number of characters you have to 
               //// replace, insert or delete to transform str1 into str2. 
-              //// The complexity of the algorithm is O(m*n), where n and m are the length of str1 and str2
               $result = levenshtein($name, $v);
+							//// now scale it by the number of characters in the original name
+							//// (note: this value may be greater than 1 if length of input string is greater than 
+							//// length of original, and # of characters to change is greater than original)
+							$result = $result / strlen($name);
               // echo "$name matched against $v>> \nresult: $result | distance: $m->dist\n";
               
               // if ( $result >= $minscore ) {
-              if ( $result < $levchanges ) {
-                // SCALE RESULT TO A VALUE FROM 0 to 1 WHERE 1=levchangesx4 and 0=no change
-                $result = $result / ( $levchanges * 4 );
+              if ( $result < $levmaxratio ) {
                 $names[$v] = $result;
-                // echo "got label: $v\tscore: $result\n";
                 $foundone = true;
+                // echo "got label: $v\tscore: $result\n";
               }
             }
             $m->labels = $names;
@@ -70,7 +71,7 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levchanges=5) {
 
             // if we want to try to use a shortcut and return a really close match as soon 
             // as it's found....
-            if ( $guessbest && $result < 2 ) {
+            if ( $guessbest && $result < 0.05 ) {
               $mg = array();
               $mg[] = $m;
               return $mg;
@@ -81,7 +82,7 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levchanges=5) {
     } // end looping on matches
     $conn = NULL;
   } catch (Exception $e) {
-    echo "getGeoNames() failed: " . $e->getMessage() . "\n";
+    echo "conflate->getPOINames() failed: " . $e->getMessage() . "\n";
     return NULL; // successful loading is false
   }
   
@@ -116,7 +117,7 @@ function getDistanceMatches($lon, $lat, $dist=500, $limit=NULL) {
       foreach ( $c as $row) {
         $m = new MatchCandidate($row['myid'], $dist);
         $m->locuuid = $row['parentid'];
-        $m->dist = $row['dist'];
+        $m->dist = floatVal($row['dist']);
         $matches[] = $m;
       }
     } else {

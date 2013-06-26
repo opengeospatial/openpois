@@ -25,7 +25,7 @@ Class POIBaseType {
    * @param typename POI type of the object. Used to override using the name of the XML element
    * @param poibaseobj poibasetype PHP object to load data into. If null, then create a new one
    */
-  static function loadXMLData($xml, $typename=NULL, &$poibaseobj=NULL) {
+  static function loadXMLData($xml, $typename=NULL, $poibaseobj=NULL, $author=NULL) {
     $name = strtoupper($typename);
     if ( empty($name) ) $name = strtoupper( $xml->getName() );
     
@@ -43,11 +43,13 @@ Class POIBaseType {
     // set this upon return if necessary
     // $poibaseobj->parentid = $xml['parentid'];
 		if ( !empty( $xml['value'] ) ) { // try <value> child element
-			$poibaseobj->value = $xml['value'];
+			$poibaseobj->value = trim($xml['value']);
 		} else if ( !empty( $xml->value) ) { // try attribute
-	    $poibaseobj->value = $xml->value;
+	    $poibaseobj->value = trim($xml->value);
 		} else if ( !empty( $xml[0] ) ) { // try CDATA of element
-			$poibaseobj->value = htmlspecialchars( $xml[0] );
+			$cdata = trim (htmlspecialchars($xml[0]));
+			if ( !empty($cdata) && strlen($cdata)>0 ) $poibaseobj->value = $cdata;
+			else $poibaseobj->value = null;
 		}
     $poibaseobj->base = $xml['base'];
     $poibaseobj->href = $xml['href'];
@@ -57,13 +59,15 @@ Class POIBaseType {
     $poibaseobj->updated = $xml['updated'];
     $poibaseobj->deleted = $xml['deleted'];
 
-    if ( !empty($xml->author) ) {
+		if ( !empty($author) ) {
+			$poibaseobj->setAuthor($author);
+    } else if ( $xml->author ) {
       $auth = POITermType::loadXMLData($xml->author);
       $auth->parentid = $poibaseobj->myid;
-      $poibaseobj->author = $auth;
+      $poibaseobj->setAuthor($auth);
     }
 
-    if ( !empty($xml->license) ) {
+    if ( $xml->license ) {
       $lic = POITERMTYPE::loadXMLData($xml->license);
       $lic->parentid = $poibaseobj->myid;
       $poibaseobj->license = $lic;

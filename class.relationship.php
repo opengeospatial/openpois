@@ -12,9 +12,9 @@ Class Relationship extends POITermType{
    * @param typename POI type of the object. Used to override using the name of the XML element
    * @param poiobj relationship PHP object to load data into. If null, then create a new one
    */
-  static function loadXMLData($xml, $typename=NULL, &$poiobj=NULL) {
+  static function loadXMLData($xml, $typename=NULL, $poiobj=NULL, $author=NULL) {
     if ( empty($poiobj) ) $poiobj = new Relationship($xml['targetPOI'], $xml['term'] );
-    $poiobj = POITermType::loadXMLData($xml, $typename, $poiobj);
+    $poiobj = POITermType::loadXMLData($xml, $typename, $poiobj, $author);
     $poiobj->changed = true;
     $poiobj->targetPOI = $xml['targetPOI'];
     

@@ -21,7 +21,7 @@ Class Geom extends POITermType {
    * @param xml 
    * @param typename POINT, LINE or POLYGON but should be auto-detected. Use this to override
    */
-  static function loadXMLData($xml, $typename=NULL, &$geomobj=NULL) {
+  static function loadXMLData($xml, $typename=NULL, $geomobj=NULL, $author=NULL) {
     $term = NULL;
     if ( !empty($xml['term']) ) $term = $xml['term'];
     $scheme = NULL;
@@ -66,7 +66,7 @@ Class Geom extends POITermType {
       $geomobj->srsname = $srsname;
       $geomobj->poslist = $poslist;
     }
-    $geomobj = POITermType::loadXMLData($xml, NULL, $geomobj);
+    $geomobj = POITermType::loadXMLData($xml, NULL, $geomobj, $author);
     $geomobj->changed = true;
 
     return $geomobj;

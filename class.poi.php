@@ -16,126 +16,29 @@ Class POI extends POIBaseType {
    * Copy data from one POI into another
    * @param $poi a POI object
    */
-  function mergePOI($poi) {
+  function mergePOI($poi, $writedb=FALSE) {
     foreach ( $poi->labels as $label) 
-      $this->updatePOITermTypeProperty($label);
+      $this->updatePOIProperty($label, $writedb);
 
     foreach ( $poi->descriptions as $description) 
-      $this->updatePOIBaseTypeProperty($description);
+      $this->updatePOIProperty($description, $writedb);
 
     foreach ( $poi->categories as $category) 
-      $this->updatePOITermTypeProperty($category);
+      $this->updatePOIProperty($category, $writedb);
 
     foreach ( $poi->times as $time) 
-      $this->updatePOITermTypeProperty($time);
+      $this->updatePOIProperty($time, $writedb);
 
     foreach ( $poi->links as $link) 
-      $this->updatePOITermTypeProperty($link);
+      $this->updatePOIProperty($link, $writedb);
 
-    foreach ( $poi->location as $location) {
-      if ( !empty($location->point) ) {
-        foreach ( $location->point as $point ) 
-          $this->updatePOITermTypeProperty($point);
-      }
-      if ( !empty($location->line) ) {
-        foreach ( $location->line as $line ) 
-          $this->updatePOITermTypeProperty($line);
-      }
-      if ( !empty($location->polygon) ) {
-        foreach ( $location->polygon as $polygon ) 
-          $this->updatePOITermTypeProperty($polygon);
-      }
-        
-      // $this->updatePOITermTypeProperty($location);
-      $this->updatePOIBaseTypeProperty($poi);
-    }
+		$this->location->points = array_merge($this->location->points, $poi->location->points);
+		$this->location->lines = array_merge($this->location->lines, $poi->location->lines);
+		$this->location->polygons = array_merge($this->location->polygons, $poi->location->polygons);
     
     return $this;
   }
 
-  /**
-   * Copy data from a SimpleXMLElement into a POI PHP object
-   * @param xml SimpleXMLElement
-   */
-  static function loadXMLData($xml, $typename='POI', &$poi=NULL) {
-    $poi = new POI( gen_uuid(), NULL );
-    $poi = POIBaseType::loadXMLData($xml, 'POI', $poi);
-
-    foreach ( $xml->label as $label) {
-      $poi->labels[] = POITermType::loadXMLData($label);
-      $poi->changed = true;
-    }
-
-    foreach ( $xml->description as $description) {
-      $d = POIBaseType::loadXMLData($description);
-      $poi->descriptions[] = $d;
-      $poi->changed = true;
-    }
-
-    foreach ( $xml->category as $category) {
-      $c = POITermType::loadXMLData($category);
-      $poi->categories[] = $c;
-      $poi->changed = true;
-    }
-
-    foreach ( $xml->time as $time) {
-      $t = POITermType::loadXMLData($time);
-      $poi->times[] = $t;
-      $poi->changed = true;
-    }
-
-    foreach ( $xml->link as $link) {
-      $l = POITermType::loadXMLData($link);
-      $poi->times[] = $l;
-      $poi->changed = true;
-    }
-
-    foreach ( $xml->location as $location) {
-      $poi->location = Location::loadXMLData($location, NULL, $poi->location);
-      $poi->changed = true;
-    }
-    
-    return $poi;
-  }
-
-  /**
-   * Check if the same description is already in this POI. 
-   * The same means the same id, base and author.
-   * If there's a match, but all fields are equal, do nothing and return false. 
-   * If there's a match but not all fields are equal, update it (and write to database) and return true.
-   * If no match, add a new one (and write to the database) and return true. 
-   */
-  public function updatePOIBaseTypeProperty($prop, $writedb=FALSE) {
-    $t = $prop->getTypeName();
-    if ( $t == 'DESCRIPTION') $props = $this->descriptions;
-    else if ( $t == 'POI') $props = array($this);
-    else return false;
-
-    foreach ($props as $c) {
-      if ( $prop->isEquivalent($c) ) {
-        return false;
-      }
-    } // end foreach
-    
-    if ( $t == 'DESCRIPTION' ) {
-      $this->addDescription($prop);
-    
-    // if we have a POI object here, we can't add another, so let's create a link to its online resource
-    } else if ( $t == 'POI' ) {
-      if ( !empty($this->href) ) {
-        $lk = new POITermType('LINK', 'related');
-        $lk->setHref( $prop->getHref() );
-        $lk->setId( $prop->getId() );
-        $this->addLink($lk);
-      }
-    }
-
-    if ( $writedb ) {
-      $this->updateDB();
-    }
-    return true;
-  }
-  
   /**
    * Check if the same POITermType property is already in this POI. 
    * Supported types: label, category, time, link
@@ -143,7 +46,7 @@ Class POI extends POIBaseType {
    * If there's a match -- all fields are equal -- do nothing and return false. 
    * If no match, add a new one and (optionally) write to the database and return true. 
    */
-  public function updatePOITermTypeProperty($ptt, $writedb=FALSE) {
+  public function updatePOIProperty($ptt, $writedb=FALSE) {
 		if ( empty($ptt) ) return false;
 		
     $t = $ptt->getTypeName();
@@ -152,9 +55,10 @@ Class POI extends POIBaseType {
     else if ( $t == 'CATEGORY') $props = $this->categories;
     else if ( $t == 'TIME') $props = $this->times;
     else if ( $t == 'LINK') $props = $this->links;
+    else if ( $t == 'DESCRIPTION') $props = $this->descriptions;
     else return NULL; // we don't know how to process it
 
-    foreach ($props as $c) { // loop through each label, category, time or link
+    foreach ($props as $c) { // loop through each label, description, category, time or link
       if ( $ptt->isEquivalent($c) ) { // if completely equal, don't bother going any further
         // echo "returning isEquivalent doing nothing with term " . $ptt->getTerm() . "...\n";
         return false; // false because nothing was updated
@@ -162,23 +66,72 @@ Class POI extends POIBaseType {
     } // end foreach
     
     // echo "IM HERE with ptt term " . $ptt->getTerm() . "\n";
-    
-    if ( $t == 'LABEL') $this->addLabel($ptt);
+    if ( $t == 'LABEL') {
+			$ptt->setTerm('secondary');
+			$this->addLabel($ptt);
+		}
+    else if ( $t == 'DESCRIPTION' ) $this->addDescription($ptt);
     else if ( $t == 'CATEGORY') $this->addCategory($ptt);
     else if ( $t == 'TIME') $this->addTime($ptt);
     else if ( $t == 'LINK') $this->addLink($ptt);
 
-    if ( $writedb ) {
-      $this->updateDB();
-    }
+    if ( $writedb ) $this->updateDB($this->myid);
+
     return true;
   }
     
   /**
+   * Copy data from a SimpleXMLElement into a POI PHP object
+   * @param xml SimpleXMLElement
+   */
+  static function loadXMLData($xml, $typename='POI', $poi=NULL, $author=NULL) {
+    $poi = new POI( gen_uuid(), NULL );
+    $poi = POIBaseType::loadXMLData($xml, 'POI', $poi);
+		if ( !empty($author) ) $poi->setAuthor($author);
+
+    foreach ( $xml->label as $label) {
+			$l = POITermType::loadXMLData($label, null, null, $poi->author);
+      $poi->labels[] = $l;
+      $poi->changed = true;
+    }
+
+    foreach ( $xml->description as $description) {
+      $d = POIBaseType::loadXMLData($description, null, null, $poi->author);
+      $poi->descriptions[] = $d;
+      $poi->changed = true;
+    }
+
+    foreach ( $xml->category as $category) {
+      $c = POITermType::loadXMLData($category, null, null, $poi->author);
+      $poi->categories[] = $c;
+      $poi->changed = true;
+    }
+
+    foreach ( $xml->time as $time) {
+      $t = POITermType::loadXMLData($time, null, null, $poi->author);
+      $poi->times[] = $t;
+      $poi->changed = true;
+    }
+
+    foreach ( $xml->link as $link) {
+      $l = POITermType::loadXMLData($link, null, null, $poi->author);
+      $poi->times[] = $l;
+      $poi->changed = true;
+    }
+
+    foreach ( $xml->location as $location) {
+      $poi->location = Location::loadXMLData($location, NULL, $poi->location, $poi->author);
+      $poi->changed = true;
+    }
+    
+    return $poi;
+  }
+  
+  /**
    * Check if the same input source is already in this POI. 
    * The same means the same id, href, type and base.
    * If so, ignore and return false. If not, add it and write to the database and return true. 
-    * @deprecated use updatePOITermTypeProperty
+    * @deprecated use updatePOIProperty
    */
   public function updateSource($link) {
     $found = false;
@@ -673,7 +626,7 @@ Class POI extends POIBaseType {
     $changed = true;
   }
   
-  function addLink($link) {
+  function addLink(&$link) {
     $link->setParentId( $this->getMyId() );
     $this->links[] = $link;
     $changed = true;

@@ -78,38 +78,38 @@ Class Location extends POIBaseType {
   * @param typename POI type of the object. Used to override using the name of the XML element
   * @param locationobj Location PHP object to load data into. If null, then create a new one
    */
-  static function loadXMLData($xml, $typename='LOCATION', &$locationobj=NULL) {
+  static function loadXMLData($xml, $typename='LOCATION', $locationobj=NULL, $author=NULL) {
     if ( $locationobj == NULL ) $locationobj = new Location();
     $locationobj = POIBaseType::loadXMLData($xml, $typename, $locationobj);
     $locationobj->changed = true;
 
     // get all points
     foreach ( $xml->point as $pointxml ) {
-      $g = Geom::loadXMLData($pointxml->Point);
+      $g = Geom::loadXMLData($pointxml->Point, null, null, $author);
       if ( !empty($g) ) $locationobj->addPointGeom( $g );
     }
 
     // get all lines
     foreach ( $xml->line as $linexml ) {
-      $g = Geom::loadXMLData($linexml->LineString);
+      $g = Geom::loadXMLData($linexml->LineString, null, null, $author);
       if ( !empty($g) ) $locationobj->addLineGeom( $g );
     }
 
     // get all polygons
     foreach ( $xml->polygon as $polygonxml ) {
-      $g = Geom::loadXMLData($polygonxml->SimplePolygon);
+      $g = Geom::loadXMLData($polygonxml->SimplePolygon, null, null, $author);
       if ( !empty($g) ) $locationobj->addPolygonGeom( $g );
     }
 
     // get all the addresses
     foreach ( $xml->address as $addressxml ) {
-      $a = POIBaseType::loadXMLData($addressxml, 'ADDRESS');
+      $a = POIBaseType::loadXMLData($addressxml, 'ADDRESS', null, $author);
       $locationobj->setAddress($a);
     }
 
     // get all the relationships
     foreach ( $xml->relationship as $relxml ) {
-      $r = Relationship::loadXMLData($relxml);
+      $r = Relationship::loadXMLData($relxml, null, null, $author);
       $locationobj->addRelationship($r);
     }
 
