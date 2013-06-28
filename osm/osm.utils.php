@@ -7,7 +7,7 @@ $osmdataurl = 'http://www.openstreetmap.org/api/0.6/node';
 $osmweburl = 'http://www.openstreetmap.org/browse/node';
 $osmbasedir = '/srv/openpoidb/databases/osm/tmp/';
 $category_scheme = 'http://wiki.openstreetmap.org/wiki/Map_Features';
-$goodcategories = array('leisure','amenity','office','shop','craft','emergency','tourism','historic','aeroway','place');
+$goodcategories = array('leisure','amenity','office','shop','craft','emergency','tourism','historic','aeroway','place','sport');
 $badcategories = array('created_by','address','attribution', 'gnis:created','gnis:reviewed','gnis:created','gnis:import_uuid','note','note:es');
 $descriptioncategories = array('description');
 
@@ -34,19 +34,17 @@ function deleteOSMData($poi) {
 }
 
 /**
- * Takes an OpenStreetMap <node> and converts to W3C POI properties.
- * Looks for a POI match in the DB and if found adds these properties to it
- * (or updates them if a property match is found)
- * If not found, creates a new POI 
- * returns the POI PHP class object created in either case
+ * Takes an OpenStreetMap <node> and converts to OGC POI properties.
+ * @param $xml PHP SimpleXML object containing OSM data
+ * @param $conflate if true, try to join this data with existing POIs, if false, just create a new POI
+ * @returns the POI PHP class object created in either case
  */
-function goodNodeToPOI($xml) {
+function goodNodeToPOI($xml, $conflate=FALSE) {
   global $ogcbaseuri, $osmbaseurl, $osmdataurl, $osmweburl, $category_scheme, $badcategories, $descriptioncategories;
   global $matchednodes; // from osm.load.php to count matches
   global $licenseidopenstreetmap, $iana;
   
   $poi = null;
-  $maxdistance = 2000;
   
   if ( empty($xml->attributes()->lat) || empty($xml->attributes()->lon) ) return NULL;
   
@@ -82,42 +80,46 @@ function goodNodeToPOI($xml) {
   // IF THERE'S NO NAME, IT'S NOT IMPORTANT ENOUGH TO STORE!!
   if ( empty($name) ) return NULL;
   
-  // get distance matches
-  $lat = (double)$xml->attributes()->lat;
-  $lon = (double)$xml->attributes()->lon;  
-  
-  $matches = getDistanceMatches($lon, $lat, $maxdistance, 9);
-  // echo "number of features within $maxdistance meters of $name: " . sizeof($matches) . "\n";
-  
-  // add name match scores to distance matches
-  $matches = getPOINames($name, $matches, FALSE);
-  // echo "num name matches: " . sizeof($matches) . "\n";
-  
-  // select a top match and load that POI
-  $thematch = NULL;
-  if ( $matches != NULL && sizeof($matches) > 0 ) {
-    foreach($matches as $m) {
-      $m->computeScore();
-      // echo "Match score is: $m->score\n";
-    }
-    foreach($matches as $m) {
-      if ( ($thematch == NULL || $m->score > $thematch->score) && $m->poiuuid != NULL ) {
-        $thematch = $m;
-      }
-    }
-  }
-  if ( $thematch != NULL && $thematch->score < 0.2000 ) {
-    $poi = POI::loadPOIUUID($thematch->poiuuid);
-    $id = $poi->getMyId();
-    echo "\nGOT A MATCH!!!!!!!!\n";
-    echo "OSM POI: $name, lat: $lat, lon: $lon, ID: $id\n";
-    echo "matched:\n";
-    foreach ($thematch->labels as $label=>$score) {
-      echo ($label . ">> distance: " . $thematch->dist);
-      echo (" name score: " . $score . " total score: " . $thematch->score . "\n");
-    }
-    $matchednodes++;
-  }
+	if ( $conflate ) {
+	  // get distance matches
+	  $maxdistance = 200; // meters
+	  $lat = (double)$xml->attributes()->lat;
+	  $lon = (double)$xml->attributes()->lon;  
+
+	  $matches = getDistanceMatches($lon, $lat, $maxdistance, 9);
+	  // echo "number of features within $maxdistance meters of $name: " . sizeof($matches) . "\n";
+
+	  // add name match scores to distance matches
+	  $matches = getPOINames($name, $matches, FALSE);
+	  // echo "num name matches: " . sizeof($matches) . "\n";
+
+	  // select a top match and load that POI
+	  $thematch = NULL;
+	  if ( $matches != NULL && sizeof($matches) > 0 ) {
+	    foreach($matches as $m) {
+	      $m->computeScore();
+	      // echo "Match score is: $m->score\n";
+	    }
+	    foreach($matches as $m) {
+	      if ( ($thematch == NULL || $m->score > $thematch->score) && $m->poiuuid != NULL ) {
+	        $thematch = $m;
+	      }
+	    }
+	  }
+	  if ( $thematch != NULL && $thematch->score < 0.2000 ) {
+	    $poi = POI::loadPOIUUID($thematch->poiuuid);
+	    $id = $poi->getMyId();
+	    echo "\nGOT A MATCH!!!!!!!!\n";
+	    echo "OSM POI: $name, lat: $lat, lon: $lon, ID: $id\n";
+	    echo "matched: ";
+	    foreach ($thematch->labels as $label=>$score) {
+	      echo ($label . ">> dist score: " . $thematch->distscore);
+	      echo (" name score: " . $score . " total score: " . $thematch->score . "\n");
+	    }
+	    $matchednodes++;
+	  }		
+	}
+
   
   // if there was no match, create a NEW POI
   if ( $poi == null ) {
@@ -162,12 +164,12 @@ function goodNodeToPOI($xml) {
     $l = new POITermType('LABEL', $term, $name, NULL);
     $l->setAuthor( getOSMAuthor() );
     $l->setLicense( getOSMLicense() );
-    $poi->updatePOITermTypeProperty($l);
+    $poi->updatePOIProperty($l);
   }
   
   // add the description if we found one
   if ( !empty($description) ) {
-    $poi->updatePOIBaseTypeProperty($description);
+    $poi->updatePOIProperty($description);
   }
   
   // create an OSM link object and add it to the POI
@@ -176,11 +178,11 @@ function goodNodeToPOI($xml) {
   $l->setBase($osmbaseurl);
   $l->setId($osmid);
   $l->setHref($osmdataurl . '/' . $osmid);
-  $x = $poi->updatePOITermTypeProperty($l);
+  $x = $poi->updatePOIProperty($l);
   
   // now add all categories
   foreach ( $categories as $cat ) {
-    $poi->updatePOITermTypeProperty($cat);
+    $poi->updatePOIProperty($cat);
   }
   
   return $poi;

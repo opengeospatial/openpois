@@ -180,7 +180,7 @@ function getPOIName($poiuuid) {
  * @return array of match candidates: name, poi id, distance, score
  * NOTE: This only works if the data is in EPSG:4326
  */
-function findNearestPOIUUIDs($lat, $lon, $dist=1000, $limit=1) {
+function findNearestPOIUUIDs($lat, $lon, $dist=500, $limit=1) {
   try {
     // $pt = "ST_GeographyFromText('SRID=4326;POINT($lon $lat)')";
     // $sql = "SELECT poiuuid, ST_Distance(Geography(ST_Transform(geompt,4326)), $pt) AS dist FROM minipoi";
@@ -241,6 +241,20 @@ function insertPOIObjectFromID($poiobj, $poiid) {
     $poiobj->insertDB($puid, getDBConnection());
   } else {
     echo "No active POI with ID: $poiid\n";
+  }
+}
+
+function getDBAltConnection() {
+  global $pgconn, $pghost, $dbnamealt, $dbadmin, $dbpw;
+  
+  try {
+    $pgconn = new PDO("pgsql:host=$pghost;dbname=$dbnamealt", $dbadmin, $dbpw);
+    $pgconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pgconn->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+    return $pgconn;
+  } catch (PDOException $e) {
+    echo "Error connecting: " . $e->getMessage() . "\n";
+    return FALSE;
   }
 }
 

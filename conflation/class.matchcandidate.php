@@ -5,6 +5,7 @@ Class MatchCandidate {
   var $geouuid;
   var $locuuid;
   var $dist;
+	var $distscore;
   var $maxdistance = 100;
   var $labels = array(); // associative array of label => scores
   var $score;
@@ -19,8 +20,8 @@ Class MatchCandidate {
     // (dscore is from 0 to 1)
     $d = $this->dist;
     if ( $d > $distmodifier ) $d = $distmodifier;
-    $dscore = $d / $distmodifier;
-    echo "dscore: $dscore\n";
+    $this->distscore = $d / $distmodifier;
+    // echo "dscore: $this->distscore\n";
     
     // label match: take the lowest score for any of the labels
     // (label score is from 0 to 1)
@@ -30,7 +31,7 @@ Class MatchCandidate {
     }
     
     // average distance and label scores
-    $this->score = ($lscore + $dscore) / 2;
+    $this->score = ($lscore + $this->distscore) / 2;
     return $this->score;
   }
 

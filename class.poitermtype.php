@@ -178,13 +178,13 @@ Class POITermType extends POIBaseType {
   }
   
   public function setScheme($surl) {
-    if (validateURL($surl) ) {
+    // if (validateURL($surl) ) {
       $this->scheme = $surl;
       $this->changed = true;
       return TRUE;
-    } else {
-      return FALSE;
-    }
+    // } else {
+    //   return FALSE;
+    // }
   }
 
   function __construct($typename, $term, $value=NULL, $scheme=NULL) {

@@ -30,11 +30,11 @@ function doNodeNode($node) {
     $k = $tag['k'];
     if ( array_search($k, $goodcategories) == TRUE ) {
       $totalnodes++;
-      $p = goodNodeToPOI($xml); // a function in osm.utils.php
-      if ( !empty($p) ) 
+      $poi = goodNodeToPOI($xml, FALSE); // a function in osm.utils.php
+      if ( !empty($poi) ) 
         // echo ($p->labels[0]->value . "\n");
         // echo ($p->AsXML() . "\n");
-        $p->updateDB();
+        $poi->updateDB();
       return;
     }
   }

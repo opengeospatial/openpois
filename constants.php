@@ -10,6 +10,7 @@ $iana = 'http://www.iana.org/assignments/link-relations/link-relations.xml';
 $pghost = 'localhost';
 $dbname = 'openpoidb';
 $dbadmin = 'poidbadmin';
+$dbnamealt = 'openpoidb_geonames';
 $dbpw = 'genjisan'; // 'fungwabus';
 
 // RDF stuff

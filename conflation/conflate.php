@@ -2,7 +2,6 @@
 
 include_once('utils.php');
 include_once('class.matchcandidate.php');
-include_once('String-Similarity.php');
 
 /**
  * Takes an array of match candidates and looks up the parent locations, 
@@ -15,7 +14,6 @@ include_once('String-Similarity.php');
 function getPOINames($name, $matches, $guessbest=FALSE, $levmaxratio=0.20) {
   if ( empty($matches) ) return NULL;
   $newmatches = array();
-  $comp = new StringMatch();
   
   try {
     $pgconn = getDBConnection();
@@ -45,10 +43,6 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levmaxratio=0.20) {
           if ( $d ) {
             foreach ($d as $lrow) { 
               $v = $lrow['value'];
-              //// do string comparison
-              // echo "VALUE is: $v AND NAME IS: $name\n";
-              // $result = $comp->fstrcmp($name, strlen($name), $v, strlen($v), $minscore);
-              // echo "$name matched against $v>> result: $result | minscore: $minscore | distance: $m->dist\n";
               
               //// The Levenshtein distance is defined as the minimal number of characters you have to 
               //// replace, insert or delete to transform str1 into str2. 
@@ -71,11 +65,7 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levmaxratio=0.20) {
 
             // if we want to try to use a shortcut and return a really close match as soon 
             // as it's found....
-            if ( $guessbest && $result < 0.05 ) {
-              $mg = array();
-              $mg[] = $m;
-              return $mg;
-            }
+            if ( $guessbest && $result < 0.010 ) return array($m);
           } // end if d (labels exist)
         } // end for each row in location query (should only be 1)
       } // end if any location with the right id

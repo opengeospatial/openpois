@@ -15,10 +15,10 @@ $is_compressed = FALSE;
 
 // $fn = "/databases/osm/Massachusetts/mass40klines.osm.bz2"; 
 // $fn = "/databases/osm/Massachusetts/massachusetts.osm.bz2";
-$fn = "/databases/osm/RI/rhode-island.osm.bz2";
+$fn = "/databases/osm/RI/rhode-island-latest.osm";
 // $fn = "/databases/osm/China/china.osm.bz2";
 $file = $projbase . $fn;
-$file = '/var/lib/postgresql/osm/planet-latest.osm';
+// $file = '/var/lib/postgresql/osm/planet-latest.osm';
 
 // logToDB("osm.import.php load of $file started", 'IMPORTINFO');
 echo("osm.import.php load of $file started: IMPORTINFO\n");
@@ -56,6 +56,7 @@ echo("running osm.import.php with file $file: IMPORTINFO\n");
 $innode = FALSE;
 while (!feof($file_handle)) {  
   $line = fgets($file_handle);
+
   // $line = bzread($file_handle, 8192);
   // if ( $line === FALSE ) die("Read problem!\n");
   // if ( bzerror($file_handle) !== 0 ) die("Compression problem!\n");
@@ -80,11 +81,12 @@ while (!feof($file_handle)) {
   
   } else { // we're not in a node yet
     // skip nodes that have no subelements
-    if ( strpos($line, '  <node id=') === 0 && substr_compare(trim($line), '/>', -2, 2) === 0) {
+		$regline = trim($line);
+    if ( strpos($regline, '<node id=') === 0 && substr_compare($regline, '/>', -2, 2) === 0) {
       continue;
 
     } else { // we aren't innode and it's not a single-line node
-      if ( strpos($line, '  <node id=') !== FALSE ) { // if it's the start of a node, write it and go innode
+      if ( strpos($regline, '<node id=') !== FALSE ) { // if it's the start of a node, write it and go innode
         $innode = TRUE;
         fwrite($writetome, $line);
         $linecounter++;
@@ -93,15 +95,14 @@ while (!feof($file_handle)) {
   }
 }
 
-// clean up
+//// clean up
 fwrite($writetome, "</osm>");
 if ($is_compressed)
   bzclose($file_handle);
 else 
   fclose($file_handle);
 
-//
-// loop through each temporary file and import it into the openpoi db
+//// loop through each temporary file and import it into the openpoi db
 if ($handle = opendir($dr)) {
    while ( FALSE !== ($entry = readdir($handle)) ) {
      if ( strpos($entry, '.') === 0 ) {

@@ -32,9 +32,11 @@ Class POI extends POIBaseType {
     foreach ( $poi->links as $link) 
       $this->updatePOIProperty($link, $writedb);
 
-		$this->location->points = array_merge($this->location->points, $poi->location->points);
-		$this->location->lines = array_merge($this->location->lines, $poi->location->lines);
-		$this->location->polygons = array_merge($this->location->polygons, $poi->location->polygons);
+		$loc = $this->location;
+		$loc->points = array_merge($loc->points, $poi->location->points);
+		$loc->lines = array_merge($this->location->lines, $poi->location->lines);
+		$loc->polygons = array_merge($loc->polygons, $poi->location->polygons);
+		$loc->relationships = array_merge($loc->relationships, $poi->location->relationships);
     
     return $this;
   }
@@ -183,9 +185,9 @@ Class POI extends POIBaseType {
   /**
    * Get the POI ID using its UUID as a lookup
    */
-  public static function getPOIID($poiuuid) {
+  public static function getPOIID($poiuuid, $conn=NULL) {
     try {
-      $conn = getDBConnection();
+			if ( empty($conn) ) $conn = getDBConnection();
       // should be only one row since any POI should have only one record without the deleted flag set
       $sql = "SELECT id FROM poibasetype WHERE ";
       $sql .= "objname LIKE 'POI' AND myid LIKE '" . $poiuuid . "' AND deleted IS NULL LIMIT 1";
@@ -209,9 +211,9 @@ Class POI extends POIBaseType {
   /**
    * Get the POI's UUID using its ID as a lookup
    */
-  public static function getPOIUUID($poiid) {
+  public static function getPOIUUID($poiid, $conn=NULL) {
     try {
-      $conn = getDBConnection();
+			if ( empty($conn) ) $conn = getDBConnection();
       // get poi record
       // should be only one row since any POI should have only one record without the deleted flag set
       $sql = "SELECT myid FROM poibasetype WHERE ";
@@ -266,10 +268,10 @@ Class POI extends POIBaseType {
   /**
    * Get a POI from the database using the POI's ID
    */
-  public static function loadPOI($poiid) {
-    $uuid = POI::getPOIUUID($poiid);
+  public static function loadPOI($poiid, $conn=NULL) {
+    $uuid = POI::getPOIUUID($poiid, $conn);
     if ( !empty($uuid) ) {
-      return POI::loadPOIUUID($uuid);
+      return POI::loadPOIUUID($uuid, $conn);
     } else {
       echo "POI LOAD FAIL in loadPOI(): Couldn't find POI with ID $poiid\n";
       return FALSE; // successful loading is false
@@ -281,12 +283,11 @@ Class POI extends POIBaseType {
   /**
    * Get a POI from the database using the POI's internal 'myid' (UUID)
    */
-  public static function loadPOIUUID($poiuuid) {
-    $conn = NULL;
+  public static function loadPOIUUID($poiuuid, $conn=NULL) {
     $poi = NULL;
     
     try {
-      $conn = getDBConnection();
+			if ( empty($conn) ) $conn = getDBConnection();
       // get poi record
       // should be only one row since any POI should have only one record without the deleted flag set
       $sql = "SELECT * FROM poibasetype WHERE ";
@@ -470,7 +471,7 @@ Class POI extends POIBaseType {
   public function updateDB($parentuuid=NULL, $conn=NULL) {
     $poiuuid = null;
     try {
-      if ( empty($conn) ) $conn = getDBConnection();      
+      if ( empty($conn) ) $conn = getDBConnection();
       $conn->beginTransaction();
             
       $poiuuid = parent::updateDB(NULL, $conn);
