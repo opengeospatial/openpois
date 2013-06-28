@@ -155,13 +155,14 @@ function findPOITermTypeByProperty($objname, $property, $propval, $pgconn=NULL) 
 
 function getPOIName($poiuuid) {
   try {
-    $sql = "SELECT value FROM poitermtype where parentid='$poiuuid' and deleted is NULL and objname like 'LABEL' and term like 'primary'";
+    // $sql = "SELECT value FROM poitermtype where parentid='$poiuuid' and deleted is NULL and objname like 'LABEL' and term like 'primary'";
+		$sql = "SELECT label FROM minipoi WHERE poiuuid='$poiuuid'"; // faster than above
 
     $pgconn = getDBConnection();
     $c = $pgconn->query($sql);
     if ( $c ) {
       foreach ( $c as $row) {
-         return $row['value'];
+         return $row['label']; //return $row['value'];
       }
     } else {
       return NULL;
@@ -187,7 +188,7 @@ function findNearestPOIUUIDs($lat, $lon, $dist=500, $limit=1) {
     // $sql .= " WHERE ST_DWithin(Geography(ST_Transform(geompt,4326)), $pt, $dist)";
     // $sql .= " ORDER BY dist ASC LIMIT $limit";
     $pt = "ST_GeographyFromText('SRID=4326;POINT($lon $lat)')";
-    $sql = "SELECT poiuuid, ST_Distance(geogpt, $pt, FALSE) AS dist FROM minipoi";
+    $sql = "SELECT DISTINCT poiuuid, ST_Distance(geogpt, $pt, FALSE) AS dist FROM minipoi";
     $sql .= " WHERE ST_DWithin(geogpt, $pt, $dist, FALSE)";
     $sql .= " ORDER BY dist ASC LIMIT $limit";
     // $pt = "ST_GeometryFromText('SRID=4326;POINT($lon $lat)')";
