@@ -85,7 +85,7 @@ function getPOINames($name, $matches, $guessbest=FALSE, $levmaxratio=0.20) {
  * @return array of MatchCandidate objects in order from closest to farthest
  * NOTE: This only works if the data is in EPSG:4326
  */
-function getDistanceMatches($lon, $lat, $dist=500, $limit=NULL) {
+function getDistanceMatches($lon, $lat, $dist=125, $limit=NULL) {
   $matches = array();
   $pt = "ST_GeographyFromText('SRID=4326;POINT($lon $lat)')";
   //// next 4 lines are pre-20130318
