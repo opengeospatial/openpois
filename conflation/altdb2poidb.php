@@ -18,8 +18,10 @@ try {
     $poiid = $row['myid'];
 		$inpoi = POI::loadPOIUUID($poiid, $connalt);
 		$name = $inpoi->getFirstLabelName();
+		// echo "Doing POI ID: $poiid, name: $name and x: " . $inpoi->location->getX() . "\n";
 		
 		$matches = getDistanceMatches($inpoi->location->getX(), $inpoi->location->getY(), 125, 9);
+		if ( $matches == NULL ) echo "No distance matches with ALT POI ID: $poiid, name: $name and x: " . $inpoi->location->getX() . "\n";
 	  $matches = getPOINames($name, $matches, FALSE);
 	  
 	  //// select a top match and load that POI
@@ -34,12 +36,13 @@ try {
 	      }
 	    }
 	  }
-	  if ( $thematch != NULL && $thematch->score < 0.2000 ) {
+	  if ( $thematch != NULL && $thematch->score <= 0.500 ) {
+echo "match id is " . $thematch->poiuuid . "\n";
 	    $poi = POI::loadPOIUUID($thematch->poiuuid);
 	    $id = $poi->getMyId();
 	    echo "\nGOT A MATCH!!!!!!!!\n";
 	    echo "ALT POI: $name ID: $poiid\n";
-	    echo "matched: ";
+	    echo "matched: ID: $thematch->poiuuid\n";
 	    foreach ($thematch->labels as $label=>$score) {
 	      echo ($label . " dist score: " . $thematch->distscore);
 	      echo (" name score: " . $score . " total score: " . $thematch->score . "\n");
@@ -47,6 +50,7 @@ try {
 	  }		
 
 	  //// if there was no match, load the alt POI into the DB
+		$inpoi->sanitize();
 	  if ( $poi == null ) {
 			$inpoi->updateDB();
 			continue; //////// DONE!!

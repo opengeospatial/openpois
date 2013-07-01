@@ -13,6 +13,41 @@ Class POI extends POIBaseType {
   var $location = NULL;
   
   /**
+   * Clear all IDs and set changed to true
+   */
+  function sanitize() {
+		$this->setMyId(null);
+		
+    foreach ( $this->labels as $label) 
+      $label->setMyId(null);
+
+    foreach ( $this->descriptions as $description) 
+      $description->setMyId(null);
+
+    foreach ( $this->categories as $category) 
+      $category->setMyId(null);
+
+    foreach ( $this->times as $time) 
+      $time->setMyId(null);
+
+    foreach ( $this->links as $link) 
+      $link->setMyId(null);
+
+		$loc = $this->location;
+		$loc->setMyId(null);
+		foreach ( $loc->points as $pt) 
+			$pt->setMyId(null);
+		foreach ( $loc->lines as $ln) 
+			$ln->setMyId(null);
+		foreach ( $loc->polygons as $py) 
+			$py->setMyId(null);
+		foreach ( $loc->relationships as $rel) 
+			$rel->setMyId(null);
+    
+    return $this;
+  }
+
+  /**
    * Copy data from one POI into another
    * @param $poi a POI object
    */

@@ -63,13 +63,13 @@ function conflate($poi) {
   // join the POIs if there was a match
   $poix->location->updateGNPoint( $poi->location->getFirstPoint() );
   $poi->labels[0]->setTerm('secondary');
-  $poix->updatePOITermTypeProperty( $poi->labels[0] );
-  $poix->updatePOIBaseTypeProperty( $poi->descriptions[0] );
+  $poix->updatePOIProperty( $poi->labels[0] );
+  $poix->updatePOIProperty( $poi->descriptions[0] );
   foreach ($poi->links as $ls) {
-    $poix->updatePOITermTypeProperty($ls);
+    $poix->updatePOIProperty($ls);
   }
   foreach ($poi->categories as $cs) {
-    $poix->updatePOITermTypeProperty($cs);
+    $poix->updatePOIProperty($cs);
   }
   $poix->updateDB();
   
@@ -125,7 +125,7 @@ function buildPOI($resource, $poslist) {
             $n = getValue($v2, 'en');
             $l = new POITermType('LABEL', 'primary', $n, NULL);
             $l->setAuthor( getDBPediaAuthor() );
-            $poi->updatePOITermTypeProperty($l);
+            $poi->updatePOIProperty($l);
 
             // Get links to related web resources
           } elseif ( $k2 === "http://www.w3.org/2002/07/owl#sameAs" ) {
@@ -134,7 +134,7 @@ function buildPOI($resource, $poslist) {
               $l = new POITermType('LINK', 'related', NULL,  $iana);
               $l->setHref($n);
               $l->setAuthor( getDBPediaAuthor() );
-              $poi->updatePOITermTypeProperty($l);
+              $poi->updatePOIProperty($l);
             }
 
             // Get the description
@@ -143,7 +143,7 @@ function buildPOI($resource, $poslist) {
             $description = new POIBaseType('DESCRIPTION');
             $description->setValue($n);
             $description->setAuthor( getDBPediaAuthor() );
-            $poi->updatePOIBaseTypeProperty($description);
+            $poi->updatePOIProperty($description);
 
             // Get categories
           } elseif ( $k2 === "http://purl.org/dc/terms/subject" ) {
@@ -153,7 +153,7 @@ function buildPOI($resource, $poslist) {
               $n = $ns[2];
               $l = new POITermType('CATEGORY', $n, NULL, 'http://dbpedia.org/resource/Category');
               $l->setAuthor( getDBPediaAuthor() );
-              $poi->updatePOITermTypeProperty($l);
+              $poi->updatePOIProperty($l);
             }
           }
         }      

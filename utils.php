@@ -3,6 +3,7 @@ include_once('constants.php');
 include_once('class.poi.php');
 
 $pgconn = null;
+// $pgconnalt = null;
 
 function getDBPediaAuthorID() {
   global $authoriddbpedia;
@@ -182,6 +183,10 @@ function getPOIName($poiuuid) {
  * NOTE: This only works if the data is in EPSG:4326
  */
 function findNearestPOIUUIDs($lat, $lon, $dist=500, $limit=1) {
+	if ( empty($lat) || empty($lon) ) return FALSE;
+	$pgconn = NULL;
+	$poiuuids = NULL;
+	
   try {
     // $pt = "ST_GeographyFromText('SRID=4326;POINT($lon $lat)')";
     // $sql = "SELECT poiuuid, ST_Distance(Geography(ST_Transform(geompt,4326)), $pt) AS dist FROM minipoi";
@@ -198,24 +203,23 @@ function findNearestPOIUUIDs($lat, $lon, $dist=500, $limit=1) {
     // $sql .= " ORDER BY dist ASC LIMIT $limit";
     // error_log("SQL: $sql");
 
-    $poiuuids = array();
     $pgconn = getDBConnection();
     $c = $pgconn->query($sql);
     if ( $c ) {
+	    $poiuuids = array();
       foreach ( $c as $row) {
          $poiuuids[] = $row['poiuuid'];
       }
-    } else {
-      return NULL;
     }
-    return $poiuuids;
     
+		$pgconn = NULL;
   } catch (Exception $e) {
-    echo "findNearestPOIUUIDs() failed: " . $e->getMessage() . "\n";
-    echo "$sql\n";
-    return NULL;
-  }
-  return NULL;
+    echo "findNearestPOIUUIDs() failed: " . $e->getMessage() . "\n  >$sql\n";
+    $poiuuids = NULL;
+	}
+
+	$pgconn = NULL;
+  return $poiuuids;
 }
 
 /**
@@ -246,13 +250,16 @@ function insertPOIObjectFromID($poiobj, $poiid) {
 }
 
 function getDBAltConnection() {
-  global $pgconn, $pghost, $dbnamealt, $dbadmin, $dbpw;
+  global $pgconnalt, $pghost, $dbnamealt, $dbadmin, $dbpw;
   
+  if ( $pgconnalt != null ) {
+    return $pgconnalt;
+  }
   try {
-    $pgconn = new PDO("pgsql:host=$pghost;dbname=$dbnamealt", $dbadmin, $dbpw);
-    $pgconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pgconn->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
-    return $pgconn;
+    $pgconnalt = new PDO("pgsql:host=$pghost;dbname=$dbnamealt", $dbadmin, $dbpw);
+    $pgconnalt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pgconnalt->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+    return $pgconnalt;
   } catch (PDOException $e) {
     echo "Error connecting: " . $e->getMessage() . "\n";
     return FALSE;
@@ -261,12 +268,10 @@ function getDBAltConnection() {
 
 function getDBConnection() {
   global $pgconn, $pghost, $dbname, $dbadmin, $dbpw;
-  // global $pghost, $dbname, $dbadmin, $dbpw;
 
-  // if ( $pgconn != null ) {
-  //   return $pgconn;
-  // }
-  
+  if ( $pgconn != null ) {
+    return $pgconn;
+  }  
   try {
     $pgconn = new PDO("pgsql:host=$pghost;dbname=$dbname", $dbadmin, $dbpw);
     $pgconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

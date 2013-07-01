@@ -103,14 +103,14 @@ while ( ($line=fgets($fp) ) != false ) {
     $id = gen_uuid();
     $poi = new POI( $id, $ogcbaseuri);
     $poi->setMyId($id);
-    $poi->updatePOITermTypeProperty($gl);
+    $poi->updatePOIProperty($gl);
   }
   
   // now update the POI with all remaining GN info and write to DB
-  $poi->updatePOITermTypeProperty($gn);
-  $poi->updatePOITermTypeProperty($gfclass);
-  $poi->updatePOITermTypeProperty($gfcode);
-  $poi->updatePOITermTypeProperty($gfcc);
+  $poi->updatePOIProperty($gn);
+  $poi->updatePOIProperty($gfclass);
+  $poi->updatePOIProperty($gfcode);
+  $poi->updatePOIProperty($gfcc);
   if ( sizeof($poi->getLocation()->getPoints()) < 1) {
     $poi->setLocation($loc);
   } else if ( !$poi->getLocation()->isGNEquivalent($loc) ) {

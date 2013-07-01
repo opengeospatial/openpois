@@ -54,22 +54,22 @@ while ( ($line=fgets($fp) ) != false ) {
   }
   $l->setHref("http://chgis.hmdc.harvard.edu/xml/id/$chgisid");
   $l->setType('application/xml');
-  $poi->updatePOITermTypeProperty($l);
+  $poi->updatePOIProperty($l);
     
   //// name 
   $l = new POITermType('LABEL', 'primary', $name, NULL);
   $l->setAuthor( getCHGISMAuthor() );
-  $poi->updatePOITermTypeProperty($l);
+  $poi->updatePOIProperty($l);
   
   //// category
   $l = new POITermType('CATEGORY', 'TYPE_PY', $type, NULL);
   $l->setAuthor( getCHGISMAuthor() );
-  $poi->updatePOITermTypeProperty($l);
+  $poi->updatePOIProperty($l);
   
   /// country
   $l = new POITermType('CATEGORY', 'cc', 'CN', NULL);
   $l->setAuthor( getCHGISMAuthor() );
-  $poi->updatePOITermTypeProperty($l);
+  $poi->updatePOIProperty($l);
   
   //// location
   $loc = new Location();
@@ -85,17 +85,17 @@ while ( ($line=fgets($fp) ) != false ) {
   if ( $syr == $eyr ) { // this is a time instant
     $l = new POITermType('TIME', 'instant', $syr, NULL);
     $l->setAuthor( getCHGISMAuthor() );
-    $poi->updatePOITermTypeProperty($l);
+    $poi->updatePOIProperty($l);
   
   } else {
     $l = new POITermType('TIME', 'start', $syr, NULL);
     $l->setAuthor( getCHGISMAuthor() );
-    $poi->updatePOITermTypeProperty($l);
+    $poi->updatePOIProperty($l);
     
     if ( $eyr != '1911') { // data stops at 1911 -- doesn't mean place ended its being then.
       $l = new POITermType('TIME', 'end', $eyr, NULL);
       $l->setAuthor( getCHGISMAuthor() );
-      $poi->updatePOITermTypeProperty($l);
+      $poi->updatePOIProperty($l);
     }
   }
   
