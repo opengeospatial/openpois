@@ -70,7 +70,7 @@ function startTag($parser, $data, $attribs) {
     }
     $node .= "<" . strtolower($data);
     foreach ($attribs as $key=>$value) 
-      $node .= (" " . strtolower($key) . "=\"" . htmlspecialchars($value,ENT_QUOTES,'UTF-8') . "\"");
+      $node .= (" " . strtolower($key) . "=\"" . htmlspecialchars($value) . "\"");
     // ENT_XML1 won't work until PHP 5.4
     // echo (" " . strtolower($key) . "=\"" . htmlspecialchars($value,ENT_XML1,'UTF-8') . "\"");
     $node .= "/>\n";
