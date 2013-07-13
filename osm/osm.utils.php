@@ -8,7 +8,7 @@ $osmweburl = 'http://www.openstreetmap.org/browse/node';
 $osmbasedir = '/srv/openpoidb/databases/osm/tmp/';
 $category_scheme = 'http://wiki.openstreetmap.org/wiki/Map_Features';
 $goodcategories = array('leisure','amenity','office','shop','craft','emergency','tourism','historic','aeroway','place','sport');
-$badcategories = array('created_by','address','attribution', 'gnis:created','gnis:reviewed','gnis:created','gnis:import_uuid','note','note:es');
+$badcategories = array('created_by','address','attribution', 'gnis:created','gnis:reviewed','gnis:created','gnis:import_uuid');
 $descriptioncategories = array('description');
 
 function deleteOSMData($poi) {
@@ -68,7 +68,7 @@ function goodNodeToPOI($xml, $conflate=FALSE) {
       $description->setLicense( getOSMLicense() );
 
     } else {
-      if ( array_search($k, $badcategories) === FALSE ) {
+      if ( array_search($k, $badcategories) === FALSE && strpos($k, 'note') !== 0 ) {
         $c = new POITermType('CATEGORY', $k, $v, $category_scheme . '#' . $k);
         $c->setAuthor( getOSMAuthor() );
         $c->setLicense( getOSMLicense() );

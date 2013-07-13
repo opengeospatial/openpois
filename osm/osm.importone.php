@@ -23,6 +23,7 @@ function doNodeNode($node) {
   global $goodcategories, $totalnodes;
 
   $xml = simplexml_load_string($node);
+
   $tags = $xml->tag; // array of <tag> elements
   // echo sizeof($tags) . "\n";
   foreach ( $tags as $tag ) {
@@ -32,8 +33,8 @@ function doNodeNode($node) {
       $totalnodes++;
       $poi = goodNodeToPOI($xml, FALSE); // a function in osm.utils.php
       if ( !empty($poi) ) 
-        // echo ($p->labels[0]->value . "\n");
-        // echo ($p->AsXML() . "\n");
+        // echo ($poi->labels[0]->value . "\n");
+        // echo ($poi->AsXML() . "\n");
         $poi->updateDB();
       return;
     }
@@ -56,8 +57,10 @@ function startTag($parser, $data, $attribs) {
   global $nodecontainsstuff;
   if ( $data == "NODE" ) {
     $nodeelement = "<" . strtolower($data);
-    foreach ($attribs as $key=>$value) 
-      $nodeelement .= (" " . strtolower($key) . "=\"" . $value . "\"");
+		foreach ($attribs as $key=>$value) {
+			if ( $key != "user" ) 
+				$nodeelement .= (" " . strtolower($key) . "=\"" . $value . "\"");
+		}
     $nodeelement .= ">\n";
     $innode = TRUE;
     $firstchild = TRUE;
