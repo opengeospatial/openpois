@@ -57,10 +57,8 @@ function startTag($parser, $data, $attribs) {
   global $nodecontainsstuff;
   if ( $data == "NODE" ) {
     $nodeelement = "<" . strtolower($data);
-		foreach ($attribs as $key=>$value) {
-			if ( $key != "user" ) 
-				$nodeelement .= (" " . strtolower($key) . "=\"" . $value . "\"");
-		}
+		foreach ($attribs as $key=>$value) 
+			$nodeelement .= (" " . strtolower($key) . "=\"" . $value . "\"");
     $nodeelement .= ">\n";
     $innode = TRUE;
     $firstchild = TRUE;
@@ -73,7 +71,7 @@ function startTag($parser, $data, $attribs) {
     }
     $node .= "<" . strtolower($data);
     foreach ($attribs as $key=>$value) 
-      $node .= (" " . strtolower($key) . "=\"" . htmlspecialchars($value) . "\"");
+      $node .= (" " . strtolower($key) . "=\"" . $value . "\"");
     // ENT_XML1 won't work until PHP 5.4
     // echo (" " . strtolower($key) . "=\"" . htmlspecialchars($value,ENT_XML1,'UTF-8') . "\"");
     $node .= "/>\n";
@@ -110,11 +108,11 @@ try {
   // set up xml parsing
   $xml_parser = xml_parser_create();
   xml_set_element_handler($xml_parser, "startTag", "endTag");
-  xml_set_character_data_handler($xml_parser, "contents");       
+  xml_set_character_data_handler($xml_parser, "contents");
 
   while ( $data = fread($fp, 4096) ) {
     xml_parse( $xml_parser, $data, feof($fp) ) or 
-      die(sprintf('XML ERROR: %s at line %d', 
+      die(sprintf("XML ERROR: %s at line %d\n", 
         xml_error_string(xml_get_error_code($xml_parser)), 
         xml_get_current_line_number($xml_parser)));
   }
