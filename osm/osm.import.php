@@ -53,6 +53,11 @@ fwrite($writetome, "<osm version=\"0.6\" generator=\"osm.import.php\">\n");
 echo("running osm.import.php with file $file: IMPORTINFO\n"); 
 //logToDB("running osm.import.php with file $file", 'IMPORTINFO'); 
 
+$finds = array();
+$finds[] = '( user=".*?")';
+$finds[] = '( timestamp=".*?")';
+$finds[] = '( version=".*?")';
+
 $innode = FALSE;
 while (!feof($file_handle)) {  
   $line = fgets($file_handle);
@@ -88,6 +93,7 @@ while (!feof($file_handle)) {
     } else { // we aren't innode and it's not a single-line node
       if ( strpos($regline, '<node id=') !== FALSE ) { // if it's the start of a node, write it and go innode
         $innode = TRUE;
+				$line = preg_replace($finds, '', $line);
         fwrite($writetome, $line);
         $linecounter++;
       }
