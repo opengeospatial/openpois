@@ -18,7 +18,7 @@ $is_compressed = FALSE;
 $fn = "/databases/osm/RI/rhode-island-latest.osm";
 // $fn = "/databases/osm/China/china.osm.bz2";
 $file = $projbase . $fn;
-// $file = '/var/lib/postgresql/osm/planet-latest.osm';
+$file = '/var/lib/postgresql/osm/planet-latest.osm';
 
 // logToDB("osm.import.php load of $file started", 'IMPORTINFO');
 echo("osm.import.php load of $file started: IMPORTINFO\n");

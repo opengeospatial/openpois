@@ -1,8 +1,8 @@
 <?php
 
 // build directory of temporary files
-$file = '/srv/openpoidb/databases/osm/RI/dfs';
-// $file = '/var/lib/postgresql/osm/planet-latest.osm';
+// $file = '/srv/openpoidb/databases/osm/RI/dfs';
+$file = '/var/lib/postgresql/osm/planet-latest.osm';
 $d = dirname($file);
 $dr = $d . '/tmp';
 

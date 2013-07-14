@@ -23,6 +23,7 @@ function doNodeNode($node) {
   global $goodcategories, $totalnodes;
 
   $xml = simplexml_load_string($node);
+
   $tags = $xml->tag; // array of <tag> elements
   // echo sizeof($tags) . "\n";
   foreach ( $tags as $tag ) {
@@ -32,8 +33,8 @@ function doNodeNode($node) {
       $totalnodes++;
       $poi = goodNodeToPOI($xml, FALSE); // a function in osm.utils.php
       if ( !empty($poi) ) 
-        // echo ($p->labels[0]->value . "\n");
-        // echo ($p->AsXML() . "\n");
+        // echo ($poi->labels[0]->value . "\n");
+        // echo ($poi->AsXML() . "\n");
         $poi->updateDB();
       return;
     }
@@ -70,7 +71,7 @@ function startTag($parser, $data, $attribs) {
     }
     $node .= "<" . strtolower($data);
     foreach ($attribs as $key=>$value) 
-      $node .= (" " . strtolower($key) . "=\"" . htmlspecialchars($value,ENT_QUOTES,'UTF-8') . "\"");
+      $node .= (" " . strtolower($key) . "=\"" . $value . "\"");
     // ENT_XML1 won't work until PHP 5.4
     // echo (" " . strtolower($key) . "=\"" . htmlspecialchars($value,ENT_XML1,'UTF-8') . "\"");
     $node .= "/>\n";

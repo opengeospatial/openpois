@@ -1,14 +1,14 @@
 <?php
 
 $projbase = '/srv/openpoidb';
-$appbase = $projbase . '/application';
+$appbase = $projbase . '/osm-app';
 $ogcbaseuri = 'http://openpois.net/pois';
 $adminemail = 'openpoiadmin@opengeospatial.org'; //'rsingh@opengeospatial.org';
 // $openplaceserrorlog = '/Users/rajsingh/workspace/openpoidb/application/error_openplaces.log';
 $iana = 'http://www.iana.org/assignments/link-relations/link-relations.xml';
 
 $pghost = 'localhost';
-$dbname = 'openpoidb';
+$dbname = 'openpoidbosm';
 $dbadmin = 'poidbadmin';
 $dbnamealt = 'openpoidb_geonames';
 $dbpw = 'genjisan'; // 'fungwabus';
