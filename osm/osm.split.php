@@ -67,6 +67,7 @@ while (!feof($file_handle)) {
   // if ( bzerror($file_handle) !== 0 ) die("Compression problem!\n");
   
   if ( $innode ) {
+		$line = str_replace(" & ", " &amp; ", $line);
     fwrite($writetome, $line); // first, write this line
     $linecounter++;
     if ( strpos($line, '</node>') !== FALSE ) { // then, if it closes the node, say we're not in a node anymore
@@ -94,6 +95,7 @@ while (!feof($file_handle)) {
       if ( strpos($regline, '<node id=') !== FALSE ) { // if it's the start of a node, write it and go innode
         $innode = TRUE;
 				$line = preg_replace($finds, '', $line);
+				$line = str_replace(" & ", " &amp; ", $line);
         fwrite($writetome, $line);
         $linecounter++;
       }
@@ -109,17 +111,17 @@ else
   fclose($file_handle);
 
 //// loop through each temporary file and import it into the openpoi db
-if ($handle = opendir($dr)) {
-   while ( FALSE !== ($entry = readdir($handle)) ) {
-     if ( strpos($entry, '.') === 0 ) {
-       continue;
-     }
-     
-     $e = $dr . '/' . $entry;
-     system("php osm.importone.php $e");
-     echo "Done importing $e.\n";
-   }
-}
+// if ($handle = opendir($dr)) {
+//    while ( FALSE !== ($entry = readdir($handle)) ) {
+//      if ( strpos($entry, '.') === 0 ) {
+//        continue;
+//      }
+//      
+//      $e = $dr . '/' . $entry;
+//      system("php osm.importone.php $e");
+//      echo "Done importing $e.\n";
+//    }
+// }
 
 // delete temp directory if it's there
 // if ( file_exists($dr) ) {

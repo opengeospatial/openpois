@@ -268,7 +268,7 @@ function getDBAltConnection() {
 
 function getDBConnection() {
   global $pgconn, $pghost, $dbname, $dbadmin, $dbpw;
-
+  
   if ( $pgconn != null ) {
     return $pgconn;
   }  
