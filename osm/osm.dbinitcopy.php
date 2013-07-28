@@ -8,6 +8,7 @@ require_once('utils.php');
 require_once('osm.utils.php');
 require_once('class.poi.php');
 
+$dbconn = getDBConnection();
 $innode = FALSE;
 $nodeelement;
 $node;
@@ -137,7 +138,7 @@ function endTag($parser, $data){
 
 
 function writePOI($xml) {
-	global $poibasetypefp, $poitermtypefp, $locationfp, $geofp;
+	global $dbconn, $poibasetypefp, $poitermtypefp, $locationfp, $geofp;
   global $ogcbaseuri, $osmbaseurl, $osmdataurl, $osmweburl, $category_scheme, $badcategories, $descriptioncategories;
   global $authoridopenstreetmap, $licenseidopenstreetmap, $iana;
 
@@ -192,6 +193,7 @@ function writePOI($xml) {
     } else { 
 			//// categories
       if ( array_search($k, $badcategories) === FALSE && strpos($k, 'note') !== 0 ) {
+				$v = pg_escape_literal($dbconn, $v);
 				$s = $category_scheme . '#' . $k;
 			  $id = gen_uuid();
 			  $ntxt = "$id\t$poiid\tCATEGORY\t$n\t$v\t$n\t$n\tNOW\tNOW\t$n\t$authoridopenstreetmap\t$licenseidopenstreetmap\t$n\t$n\t$n\t$k\t$s\n";
