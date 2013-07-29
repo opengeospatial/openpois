@@ -193,7 +193,7 @@ function writePOI($xml) {
     } else { 
 			//// categories
       if ( array_search($k, $badcategories) === FALSE && strpos($k, 'note') !== 0 ) {
-				$v = pg_escape_literal($dbconn, $v);
+				$v = $dbconn->quote($v);
 				$s = $category_scheme . '#' . $k;
 			  $id = gen_uuid();
 			  $ntxt = "$id\t$poiid\tCATEGORY\t$n\t$v\t$n\t$n\tNOW\tNOW\t$n\t$authoridopenstreetmap\t$licenseidopenstreetmap\t$n\t$n\t$n\t$k\t$s\n";
