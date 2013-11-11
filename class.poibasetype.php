@@ -380,7 +380,42 @@ Class POIBaseType {
     }
     return $bx;
   }
+
+  public function asJSON($timestamps=TRUE, $metadata=TRUE) {
+		$bx = "{";
+		$bx .= $this->getAttributesAsJSON($timestamps, $metadata);
+		if ( $this->getAuthor() != NULL ) {
+			$bx .= "\n," . '"author": ';
+			$bx .= $this->getAuthor()->asJSON($timestamps, $metadata) . "\n";
+		}
+		if ( $this->getLicense() != NULL ) {
+			$bx .= "\n," . '"license": ';
+			$bx .= $this->getLicense()->asJSON($timestamps, $metadata) . "\n";
+		}
+
+    $bx .= "}";
+    return $bx;
+  }
   
+	protected function getAttributesAsJSON($timestamps=TRUE, $metadata=TRUE) {
+	  // $x = '"typename": "' . $this->getTypename() . '",';
+		$x = '';
+	  if ( $this->getId() != NULL ) $x .= '"id": "' . $this->getId() . '",';
+	  if ( $this->getValue() != NULL ) $x .= '"value": "' . htmlspecialchars($this->getValue()) . '",';
+	  if ( $this->getHref() != NULL ) $x .= '"href": "' . htmlspecialchars($this->getHref()) . '",';
+	  if ( $this->getType() != NULL ) $x .= '"type": "' . htmlspecialchars($this->getType()) . '",';
+	  if ( $timestamps ) {
+	    if ( $this->getCreated() != NULL ) $x .= '"created": "' . $this->getCreated() . '",';
+	    if ( $this->getUpdated() != NULL ) $x .= '"updated": "' . $this->getUpdated() . '",';
+	    if ( $this->getDeleted() != NULL ) $x .= '"deleted": "' . $this->getDeleted() . '",';
+	  }
+	  if ( $this->getLang() != NULL ) $x .= '"lang": "' . $this->getLang() . '",';
+	  if ( $this->getBase() != NULL ) $x .= '"base": "' . htmlspecialchars($this->getBase()) . '",';
+		
+		$x = rtrim($x, ",");
+	  return $x;    
+	}
+
   protected function getXMLAttributeSnippet($timestamps=TRUE, $metadata=TRUE) {
     $x = '';
     if ( $this->id != NULL ) 

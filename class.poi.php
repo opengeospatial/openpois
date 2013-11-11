@@ -608,6 +608,62 @@ Class POI extends POIBaseType {
   }
   
   /**
+   * @see POIBaseType::asGeoJSON()
+   * @TODO handle geometries other than the first point
+   */
+  function asGeoJSON($timestamps=FALSE, $metadata=TRUE) {
+    $x = "\n{" . ' "type": "Feature", ' . "\n";
+	
+	  // coordinates
+		$gc = getLatLon($this->location);
+		$coords = $gc[1] . ", " . $gc[0];
+	  // $x .= '"geometry": {"type": "Point", "coordinates": "[' . $coords . ']"}, ' . "\n";
+	  $x .= '"geometry": {"type": "Point", "coordinates": [' . $coords . ']}, ' . "\n";
+	
+		$x .= '"properties": {' . "\n" . '"typename": "POI",' . "\n";
+		$x .= $this->getAttributesAsJSON($timestamps, $metadata);
+
+		if ( count($this->labels) > 0 ) {
+			$u = ",\n" . '"labels": [';
+	    foreach ($this->labels as &$label) $u .= $label->asJSON($timestamps, $metadata) . ', ';
+			$u = rtrim($u, ", ");
+			$x .= $u . "]\n";
+		}
+		if ( count($this->descriptions) > 0 ) {
+			$u = ",\n" . '"descriptions": [';
+			foreach ($this->descriptions as &$d) $u .= $d->asJSON($timestamps, $metadata) . ', ';
+			$u = rtrim($u, ", ");
+			$x .= $u . "]\n";
+		}
+		if ( count($this->categories) > 0 ) {
+			$u = ",\n" . '"categories": [';
+			foreach ($this->categories as &$c) $u .= $c->asJSON($timestamps, $metadata) . ', ';
+			$u = rtrim($u, ", ");
+			$x .= $u . "]\n";
+		}
+		if ( count($this->links) > 0 ) {
+			$u = ",\n" . '"links": [';
+			foreach ($this->links as &$l) $u .= $l->asJSON($timestamps, $metadata) . ', ';
+			$u = rtrim($u, ", ");
+			$x .= $u . "]\n";
+		}
+		if ( count($this->times) > 0 ) {
+			$u = ",\n" . '"times": [';
+			foreach ($this->times as &$t) $u .= $t->asJSON($timestamps, $metadata) . ', ';
+			$u = rtrim($u, ", ");
+			$x .= $u . "]\n";
+		}
+		if ( $this->metadata ) {
+			$x .= ",\n" . '"metadata": "' . $this->metadata . '"';
+		}
+
+		$x .= "\n}"; // end properties
+		$x .= "\n}"; // end Feature
+        
+    return $x;
+  }
+
+  /**
    * @see POIBaseType::asXML()
    */
   function asXML($timestamps=FALSE, $metadata=TRUE) {

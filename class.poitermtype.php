@@ -150,6 +150,17 @@ Class POITermType extends POIBaseType {
     return $x;    
   }
 
+	protected function getAttributesAsJSON($timestamps=TRUE, $metadata=TRUE) {
+	  // $x = '"typename": "' . $this->getTypename() . '",';
+		$x = '';
+	  if ( $this->getTerm() != NULL ) $x .= '"term": "' . htmlspecialchars($this->getTerm()) . '",';
+	  if ( $this->getScheme() != NULL ) $x .= '"scheme": "' . htmlspecialchars($this->getScheme()) . '",';
+		$x .= parent::getAttributesAsJSON($timestamps, $metadata);
+
+		$x = rtrim($x, ",");
+	  return $x;    
+	}
+
   /**
    * check if the input poitermtype is equivalent in all properties to this one
    */
