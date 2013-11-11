@@ -17,6 +17,7 @@ if ( empty($argv) || sizeof($argv) < 2 )
 $fn = $argv[1];
 
 logToDB("geonames.modify.php processing $fn", 'UPDATEINFO');
+echo "geonames.modify.php processing $fn";
 
 $fp = fopen($fn, "r");
 if ( FALSE === $fp) {
