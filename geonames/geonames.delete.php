@@ -16,6 +16,7 @@ if ( empty($argv) || sizeof($argv) < 2 )
 $fn = $argv[1];
 
 logToDB("geonames.delete.php processing $fn", 'UPDATEINFO');
+echo "geonames.delete.php processing $fn";
 
 $fp = fopen($fn, "r");
 if ( FALSE === $fp) {
