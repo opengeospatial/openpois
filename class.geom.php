@@ -162,26 +162,6 @@ Class Geom extends POITermType {
     return $this->myid;
   }
 
-  public function asRDF($timestamps=TRUE, $metadata=TRUE, $subject="", $whitesp="") {
-    global $openpoitype;
-    $bx = parent::asRDF($timestamps, $metadata, $subject, $whitesp);
-    // trim ending bracket off poibasetype expression
-    $ends = strrpos($bx, ']');
-    if ( $ends !== FALSE ) {
-      $bx = substr($bx, 0, $ends);
-    }
-
-    if ( $this->poslist != null ) {
-      $bx .= "$whitesp   $openpoitype:poslist " . $this->poslist . " ; ";
-    }
-    if ( $this->srsname != null ) {
-      $bx .= "\n$whitesp  $openpoitype:srsname " . $this->srsname . " ; ";
-    }
-    
-    $bx .= "\n" . $whitesp . '] . ';
-    return $bx;
-  }
-  
   public function asXML($timestamps=TRUE, $metadata=TRUE) {
     $bx = '';
     $bx .= '<' . strtolower($this->typename);
@@ -202,6 +182,22 @@ Class Geom extends POITermType {
     $bx .= '</' . strtolower($this->typename) . '>' . "\n";
     return $bx;
   }
+
+	public function getWKT() {
+		$x = strtoupper($this->geomtypename) . " (";
+		$ps = explode(" ", $this->poslist);
+		$p = "";
+		$i = count($ps);
+		for ($j=0; $j<$i; $j++) {
+			$p .= $ps[$j];
+			if ( !($j % 2 == 0) ) $p .= ",";
+			$p .= " ";
+		}
+		$x .= rtrim($p, ", ");
+		
+		$x .= ")";
+		return $x;
+	}
   
   public function getSRSName() {
     return $this->srsname;

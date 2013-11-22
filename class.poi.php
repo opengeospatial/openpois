@@ -565,45 +565,67 @@ Class POI extends POIBaseType {
    */
   function asRDF($timestamps=FALSE, $metadata=FALSE, $subject="", $whitesp='') {
     global $ogcbaseuri;
-    // $x = "\n<div itemscope itemtype=\"http://schema.org/POI\">";
-    $x = "\n@base <$ogcbaseuri> .";
-    $x .= "\n@prefix dcterms: <http://purl.org/dc/terms/> .";
-    $x .= "\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .";
-    $x .= "\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .";
-    $x .= "\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .";
-    $x .= "\n@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .\n";
-    
+    $x = "@prefix dcterms: <http://purl.org/dc/terms/> .";
+    $x .= "\n@prefix osgeo: <http://data.ordnancesurvey.co.uk/ontology/geometry/> .";
+    $x .= "\n@prefix pelagios: <http://pelagios.github.io/terms#> .";
+    $x .= "\n@prefix pleiades: <http://pleiades.stoa.org/places/vocab#> .";
+    $x .= "\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .";
+    $x .= "\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .";
+
     // id
-    $x .= "\n</" . $this->id . "> openpoi:id </" . $this->id . "> ; ";
-    $x .= "\n  rdf:about </" . $this->id . "> ; ";
-    $x .= "\n  rdfs:isDefinedBy </" . $this->id . ".rdf> . ";
+    $x .= "\n\n<$ogcbaseuri/" . $this->id . "> a pelagios:PlaceRecord ;\n";
+
+    // labels
+		if ( $this->getFirstLabelName() ) $x .= "  dcterms:title \"" . $this->getFirstLabelName() . "\" ;";
+		$i = count($this->labels);
+		if ( $i > 1 ) {
+			for ($j=1; $j < $i; $j++ ) {
+				$k = $this->labels[$j];
+				$x .= "\n  pleiades:hasName [ skos:label \"" . $k->getValue() . "\" ] ;";
+			}
+		}
+		
+		// descriptions
+		$i = count($this->descriptions);
+		if ( $i > 0 ) {
+			$x .= "  dcterms:description \"" . $this->descriptions[0]->getValue() . "\" ;";
+			for ($j=1; $j < $i; $j++ ) {
+				$x .= "\n  dcterms:description \"" . $this->descriptions[$j]->getValue() . "\" ;";
+			}
+		}
     
-    foreach ($this->labels as &$label) {
-      $x .= "\n</" . $this->id . "> openpoi:label </$this->id/label#$label->myid> .";
-      $x .= $label->asRDF($timestamps, $metadata, "/$this->id");
-    }
-    foreach ($this->descriptions as &$d) {
-      $x .= "\n</" . $this->id . "> openpoi:description </$this->id/description#$d->myid> .";
-      $x .= $d->asRDF($timestamps, $metadata, "/$this->id");
-    }
-    foreach ($this->categories as &$c) {
-      $x .= "\n</" . $this->id . "> dcterms:subject </$this->id/category#$c->myid> .";
-      $x .= $c->asRDF($timestamps, $metadata, "/$this->id");
-    }
-    foreach ($this->times as &$t) {
-      $x .= "\n</" . $this->id . "> openpoi:time </$this->id/time#$t->myid> .";
-      $x .= $t->asRDF($timestamps, $metadata, "/$this->id");
-    }
-    foreach ($this->links as &$l) {
-      $x .= "\n</" . $this->id . "> openpoi:link </$this->id/link#$l->myid> .";
-      $x .= $l->asRDF($timestamps, $metadata, "/$this->id");
-    }
-    if ( $this->metadata ) {
-      $x .= "\n $openpoitype:metadata " . htmlspecialchars($this->metadata) . " ; ";
-    }
-    $x .= "\n</" . $this->id . "> dcterms:spatial </$this->id/location#$l->myid> .";
-    $x .= $this->location->asRDF($timestamps, $metadata, "/$this->id");
+		// categories
+		foreach ($this->categories as $cat) {
+			$c = "\n  dcterms:subject \"";
+			if ( $cat->getScheme() ) $c .= "scheme=" . $cat->getScheme() . "; ";
+			else $c .= "scheme=<http://openpois.net/category>; ";
+			$c .= " term=" . $cat->getTerm() . "; ";
+			if ( $cat->getValue() ) $c .= " value=" . $cat->getValue() . ";";
+			$c .= "\" ;";
+			$x .= $c;
+		}
     
+		// links
+		foreach ($this->links as $link) {
+			$x .= "\n  skos:closeMatch <" . $link->getHref() . "> ;";
+		}
+
+    // times
+		foreach ($this->times as $time) {
+			$c = "\n  dcterms:temporal \"";
+			if ( $time->getTerm() == "start" ) $c .= "start=" . $time->getValue() . "; ";
+			if ( $time->getTerm() == "end" ) $c .= "end=" . $time->getValue() . "; ";
+			$c .= "\" ;";
+			$x .= $c;
+		}
+		
+		// location
+		foreach ($this->location->points as $l) $x .= "\n  pleiades:hasLocation [ osgeo:asWKT \"" . $l->getWKT() . "\" ] ;";
+		foreach ($this->location->lines as $l) $x .= "\n  pleiades:hasLocation osgeo:asWKT \"" . $l->getWKT() . "\" ] ;";
+		foreach ($this->location->polygons as $l) $x .= "\n  pleiades:hasLocation osgeo:asWKT \"" . $l->getWKT() . "\" ] ;";
+    
+
+		$x .= "\n.";
     return $x . "\n";
   }
   
