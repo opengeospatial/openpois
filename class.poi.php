@@ -545,8 +545,8 @@ Class POI extends POIBaseType {
   /**
    * @see POIBaseType::asJSON()
    */
-  function asJSON($JSON_OPTIONS=0) {
-    return json_encode($this, $JSON_OPTIONS);
+  function asJSON($timestamps=TRUE, $metadata=TRUE) {
+    return json_encode($this);
   }
 
   /**
