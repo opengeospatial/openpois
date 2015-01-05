@@ -617,8 +617,9 @@ Class POI extends POIBaseType {
 	  // coordinates
 		$gc = getLatLon($this->location);
 		$coords = $gc[1] . ", " . $gc[0];
-	  // $x .= '"geometry": {"type": "Point", "coordinates": "[' . $coords . ']"}, ' . "\n";
-	  $x .= '"geometry": {"type": "Point", "coordinates": [' . $coords . ']}, ' . "\n";
+		$ptloc = '{"type": "Point", "coordinates": [' . $coords . ']}';
+		$x .= '"geometry": {"type": "GeometryCollection", "geometries": [' . $ptloc . ']},' . "\n";
+	  // $x .= '"geometry": {"type": "Point", "coordinates": [' . $coords . ']}, ' . "\n";
 	
 		$x .= '"properties": {' . "\n" . '"typename": "POI",' . "\n";
 		$x .= $this->getAttributesAsJSON($timestamps, $metadata);
